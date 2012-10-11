@@ -1,7 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+/* css reset */
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -47,21 +44,28 @@ table {
 	border-spacing: 0;
 }
 
-/* my style sheet */
+/* layout */
 body {
     font-size:12px;   
 }
 
 #content {
-    border:1px solid black;   
+    border:1px solid black;  
+    width:960px;  
 }
 
+/* top */
 #top {
     width:960px;
     height:100px;
     text-align:center;
 }
 
+#title_img {
+    height:100px;
+}
+
+/* membership */
 #membership {
     width:960px;
     height:20px;
@@ -77,52 +81,22 @@ body {
     font-weight:bold;
 }
 
+/* center */
 #center {
     width:960px;
     height:450px;
 }
 
-#title_img {
-    height:100px;
-}
-
-#content {
-    width:960px;   
-}
-
+/* center-leftcon */
 #left_con {
     width:400px;
     float:left;
 }
 
-#notice {
-}
-
-#translate { 
-}
-
-#right_con {
-    width:560px;
-    height:450px;
-    overflow-y:scroll;
-}
-
-#bottom {
-    clear:both;
-    width:960px;
-    height:60px;
-    text-align:center;
-    vertical-align:middle;
-    display:table-cell;
-}
-
+/* center-leftcon-notice */
 #notice {
     position:relative;    
     height:155px; 
-}
-
-#notice h3 { 
-    float:left;
 }
 
 #notice .more a {    
@@ -132,6 +106,10 @@ body {
     padding:8px;    
 }
 
+#noticeTitle {
+    border-bottom:1px solid gray;
+}
+
 #notice ul {    
     position:absolute;    
     width:100%;    
@@ -139,7 +117,7 @@ body {
     left:0; 
 }
 
-#notice li {    
+#notice li {
     position:relative;
     padding:0 0 0 12px;
     line-height:1.8;
@@ -149,11 +127,35 @@ body {
     text-decoration:none;
     color:#033E6B;
 }
-#notice .date {    
+#notice .date {
     position:absolute;    
     top:0;
     right:0;
-    margin-top:-4px;}
+    margin-top:-4px;
+}
+
 #pdsList {    
     display:none;    
+}
+
+
+/* center-leftcon-translate */
+#translate { 
+}
+
+/* center-righttcon */
+#right_con {
+    width:560px;
+    height:450px;
+    overflow-y:scroll;
+}
+
+/* bottom */
+#bottom {
+    clear:both;
+    width:960px;
+    height:60px;
+    text-align:center;
+    vertical-align:middle;
+    display:table-cell;
 }
