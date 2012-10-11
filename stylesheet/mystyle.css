@@ -148,6 +148,11 @@ body {
 
 /* center-leftcon-translate */
 #translate { 
+    
+}
+
+#oversea {
+    display:none;   
 }
 
 /* center-righttcon */
