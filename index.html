@@ -2,16 +2,18 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <!--<link rel="stylesheet" type="text/css" href="./stylesheet/mystyle.css"/>-->
+        <link rel="stylesheet" type="text/css" href="./stylesheet/mystyle.css"/>
     </head>
     <body>
         <div id="content">
             <div id="top">
-            <img src="./images/title.png" alt="타이틀" />
-            <ul id="membership">
-                <li>로그인</li>
-                <li>회원가입</li>
-            </ul>
+                <img src="./images/title.png" alt="타이틀" id="title_img" />
+            </div>
+            <div id="membership">
+                <ul>
+                    <li>로그인</li>
+                    <li>회원가입</li>
+                </ul>
             </div>
             <div id="center">
                 <div id="left_con">
@@ -25,7 +27,7 @@
                             <th>
                                 구 간
                             </th>
-                            <td>
+                            <td colspan="3">
                                 <input type="radio" name="section">왕복
                                 <input type="radio" name="section">편도
                                 <input type="radio" name="section">다구간
@@ -36,9 +38,18 @@
                                 출발지
                             </th>
                             <td>
-                                <input type="radio" name="section">왕복
-                                <input type="radio" name="section">편도
-                                <input type="radio" name="section">다구간
+                                <select>
+                                    <option>인천</option>
+                                    <option>김포</option>
+                                    <option>부산</option>
+                                    <option>제주</option>
+                                </select>
+                            </td>
+                            <th>
+                                가는날
+                            </th>
+                            <td>
+                                <input type="text" />
                             </td>
                         </tr>
                         <tr>
@@ -46,37 +57,162 @@
                                 도착지
                             </th>
                             <td>
-                                <input type="radio" name="section">왕복
-                                <input type="radio" name="section">편도
-                                <input type="radio" name="section">다구간
+                                <input type="text" value="도시명or공항명입력" />
+                            </td>
+                            <th>
+                                오는날
+                            </th>
+                            <td>
+                                <input type="text" />
                             </td>
                         </tr>
                         <tr>
                             <th>
                                 탑승객
                             </th>
-                            <td>
-                                <input type="radio" name="section">왕복
-                                <input type="radio" name="section">편도
-                                <input type="radio" name="section">다구간
+                            <td colspan="3">
+                                <select>
+                                    <option>성인0명</option>
+                                    <option selected>성인1명</option>
+                                    <option>성인2명</option>
+                                    <option>성인3명</option>
+                                    <option>성인4명</option>
+                                    <option>성인5명</option>
+                                </select>
+                                <select>
+                                    <option>소아0명</option>
+                                    <option>소아1명</option>
+                                    <option>소아2명</option>
+                                    <option>소아3명</option>
+                                    <option>소아4명</option>
+                                    <option>소아5명</option>
+                                </select>
+                                <select>
+                                    <option>유아0명</option>
+                                    <option>유아1명</option>
+                                    <option>유아2명</option>
+                                    <option>유아3명</option>
+                                    <option>유아4명</option>
+                                    <option>유아5명</option>
+                                </select>
                             </td>
+                        </tr>
+                        <tr>
                             <th>
                                 좌석
                             </th>
-                            <td>
-                                <input type="radio" name="section">왕복
-                                <input type="radio" name="section">편도
-                                <input type="radio" name="section">다구간
+                            <td colspan="3">
+                                <select>
+                                    <option>일반석</option>
+                                    <option>비즈니스석</option>
+                                    <option>일등석</option>
+                                </select>
                             </td>
                         </tr>        
                     </table>
                     <h3>국내선</h3>
+                    <table>
+                        <tr>
+                            <th>
+                                구 간
+                            </th>
+                            <td colspan="3">
+                                <input type="radio" name="section">왕복
+                                <input type="radio" name="section">편도
+                                <input type="radio" name="section">다구간
+                            </td>
+                        </tr>    
+                        <tr>
+                            <th>
+                                출발지
+                            </th>
+                            <td>
+                                <select>
+                                    <option>인천</option>
+                                    <option>김포</option>
+                                    <option>부산</option>
+                                    <option>제주</option>
+                                </select>
+                            </td>
+                            <th>
+                                가는날
+                            </th>
+                            <td>
+                                <input type="text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                도착지
+                            </th>
+                            <td>
+                                <select>
+                                    <option>인천</option>
+                                    <option>김포</option>
+                                    <option>부산</option>
+                                    <option>제주</option>
+                                </select>
+                            </td>
+                            <th>
+                                오는날
+                            </th>
+                            <td>
+                                <input type="text" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                탑승객
+                            </th>
+                            <td colspan="3">
+                                <select>
+                                    <option>성인0명</option>
+                                    <option selected>성인1명</option>
+                                    <option>성인2명</option>
+                                    <option>성인3명</option>
+                                    <option>성인4명</option>
+                                    <option>성인5명</option>
+                                </select>
+                                <select>
+                                    <option>소아0명</option>
+                                    <option>소아1명</option>
+                                    <option>소아2명</option>
+                                    <option>소아3명</option>
+                                    <option>소아4명</option>
+                                    <option>소아5명</option>
+                                </select>
+                                <select>
+                                    <option>유아0명</option>
+                                    <option>유아1명</option>
+                                    <option>유아2명</option>
+                                    <option>유아3명</option>
+                                    <option>유아4명</option>
+                                    <option>유아5명</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                좌석
+                            </th>
+                            <td colspan="3">
+                                <select>
+                                    <option>일반석</option>
+                                    <option>비즈니스석</option>
+                                    <option>일등석</option>
+                                </select>
+                            </td>
+                        </tr>        
+                    </table>
+                    <img src="./images/btn_srch.gif" alt="검색버튼" />
                     </div>
                 </div>
-                <div id="right_con"></div>
+                <div id="right_con">
+                내용내용
+                </div>
             </div>
             <div id="bottom">
-            copyright@ 명지대학교 컴퓨터공학과 신동욱 | 안형주
+            <p>copyright@ 명지대학교 컴퓨터공학과 신동욱 | 안형주</p>
             </div>
         <div>
     </body>
