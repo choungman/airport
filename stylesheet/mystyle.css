@@ -50,7 +50,7 @@ body {
 }
 
 #content {
-    border:1px solid black;  
+    border:3px double black;  
     width:960px;  
 }
 
@@ -69,6 +69,7 @@ body {
 #membership {
     width:960px;
     height:20px;
+    border-bottom:3px double black;
 }
 
 #membership ul {
@@ -77,14 +78,19 @@ body {
 
 #membership li{
     float:left; 
-    margin-left:5px;
+    margin-right:10px;
     font-weight:bold;
+}
+
+#membership li a{
+    text-decoration:none;
 }
 
 /* center */
 #center {
     width:960px;
-    height:450px;
+    height:445px;
+    padding-top:5px;
 }
 
 /* center-leftcon */
@@ -96,24 +102,25 @@ body {
 /* center-leftcon-notice */
 #notice {
     position:relative;    
-    height:155px; 
+    height:155px;
 }
 
 #notice .more a {    
     position:absolute;    
     top:0;    
     right:0;    
-    padding:8px;    
+    padding:8px 8px 0 0;    
 }
 
 #noticeTitle {
     border-bottom:1px solid gray;
+    line-height:0;
 }
 
 #notice ul {    
     position:absolute;    
     width:100%;    
-    top:45px;    
+    top:40px;    
     left:0; 
 }
 
@@ -158,4 +165,5 @@ body {
     text-align:center;
     vertical-align:middle;
     display:table-cell;
+    border-top:3px double black;
 }
