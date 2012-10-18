@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/reset-fonts-grids/reset-fonts-grids.css">
     <!-- My CSS-->
     <link rel="stylesheet" type="text/css" href="./styleSheet/myStyle.css" />
+    <!-- JqueryUI CSS -->
+    <link rel="stylesheet" type="text/css" href="./styleSheet/jquery-ui-1.9.0.custom.css">
     <!-- JqueryMenu -->
     <link rel="stylesheet" type="text/css" href="./styleSheet/jqueryslidemenu.css" />
     <!--[if lte IE 7]>
@@ -18,86 +20,152 @@
     </style>
     <![endif]-->
     
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
-    <script type="text/javascript" src="jqueryslidemenu.js"></script>
+    <script type="text/javascript" src="./javascript/jquery-ui-1.9.0.custom.js"></script>
+    <script type="text/javascript" src="./javascript/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="./javascript/jqueryslidemenu.js"></script>
     <script type="text/javascript">
-        /*** Temporary text filler function. Remove when deploying template. ***/
-        var gibberish=["This is just some filler text", "Welcome to Dynamic Drive CSS Library", "Demo content nothing to read here"]
-        function filltext(words){
-        for (var i=0; i<words; i++)
-        document.write(gibberish[Math.floor(Math.random()*3)]+" ")
-        }
+        $(document).ready(function(){
+            
+            $('#checkout').hide();
+            
+            $('#pdsList').hide();
+            $('#notice_tab #modernbricksmenu li').eq(0).click(function(){
+                $('#notice_tab #modernbricksmenu li').each(function(index){
+                    $(this).removeClass('current');
+                });
+                $('#notice_tab #modernbricksmenu li').eq(0).addClass('current');
+                $('#noticeList').show();
+                $('#pdsList').hide();
+            });
+            $('#notice_tab #modernbricksmenu li').eq(1).click(function(){
+                $('#notice_tab #modernbricksmenu li').each(function(index){
+                    $(this).removeClass('current');
+                });
+                $('#notice_tab #modernbricksmenu li').eq(1).addClass('current');
+                $('#pdsList').show();
+                $('#noticeList').hide();
+            });
+            
+            $('#internal').hide();
+            $('#translate_tab #modernbricksmenu li').eq(0).click(function(){
+                $('#translate_tab #modernbricksmenu li').each(function(index){
+                    $(this).removeClass('current');
+                });
+                $('#translate_tab #modernbricksmenu li').eq(0).addClass('current');
+                $('#internal').show();
+                $('#oversea').hide();
+            });
+            $('#translate_tab #modernbricksmenu li').eq(1).click(function(){
+                $('#translate_tab #modernbricksmenu li').each(function(index){
+                    $(this).removeClass('current');
+                });
+                $('#translate_tab #modernbricksmenu li').eq(1).addClass('current');
+                $('#oversea').show();
+                $('#internal').hide();
+            });
+            
+            
+            $('#tabs').tabs();
+        });
     </script>
 </head>
 <body>
+                <div id="tabs">
+                    <ul>
+                        <li><a href="#tabs-1">공지사항</a></li>
+                        <li><a href="#tabs-2">자료실</a></li>
+                        <li><a href="#tabs-3">자료실</a></li>
+                    </ul>
+                    <div id="tabs-1">
+                    <p>afad
+                        </p>
+                    </div>
+                    <div id="tabs-2">
+                    <p>afad
+                        </p>
+                    </div>
+                    <div id="tabs-3">
+                    <p>afad
+                        </p>
+                    </div>
+                </div>
     <div id="maincontainer">
         <div id="topsection">
-            <div class="innertube">
-            <h1 id="title">명지항공시스템 타이틀</h1></div>
-            <div class="innertube">
-                <div id="myslidemenu" class="jqueryslidemenu">
-                    <ul>
-                    <li><a href="http://www.dynamicdrive.com">Item 1</a></li>
-                    <li><a href="#">Item 2</a></li>
-                    <li><a href="#">Folder 1</a>
-                      <ul>
-                      <li><a href="#">Sub Item 1.1</a></li>
-                      <li><a href="#">Sub Item 1.2</a></li>
-                      <li><a href="#">Sub Item 1.3</a></li>
-                      <li><a href="#">Sub Item 1.4</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#">Item 3</a></li>
-                    <li><a href="#">Folder 2</a>
-                      <ul>
-                      <li><a href="#">Sub Item 2.1</a></li>
-                      <li><a href="#">Folder 2.1</a>
-                        <ul>
-                        <li><a href="#">Sub Item 2.1.1</a></li>
-                        <li><a href="#">Sub Item 2.1.2</a></li>
-                        <li><a href="#">Folder 3.1.1</a>
-                        	<ul>
-                        		<li><a href="#">Sub Item 3.1.1.1</a></li>
-                        		<li><a href="#">Sub Item 3.1.1.2</a></li>
-                        		<li><a href="#">Sub Item 3.1.1.3</a></li>
-                        		<li><a href="#">Sub Item 3.1.1.4</a></li>
-                        		<li><a href="#">Sub Item 3.1.1.5</a></li>
-                    		</ul>
-                        </li>
-                        <li><a href="#">Sub Item 2.1.4</a></li>
+            <div id="membershipwrap">
+                <div id="membership">
+                    <div id="checkin">
+                        <ul class="arrowunderline">
+                            <li><a href="#">로그인</a></li>
+                            <li><a href="#">회원가입</a></li>
                         </ul>
-                      </li>
-                      </ul>
-                    </li>
-                    <li><a href="http://www.dynamicdrive.com/style/">Item 4</a></li>
-                    </ul>
-                    <br style="clear: left" />
+                    </div>
+                    <div id="checkout">
+                        <ul>
+                            <li><a href="#">로그아웃</a></li>
+                            <li><a href="#">개인정보수정</a></li>
+                            <li><a href="#">MyPage</a></li>
+                        </ul>
+                    </div>
                 </div>
+            </div>
+            <div id="title">
+                <h1>명지항공시스템 타이틀</h1>
+            </div>
+            <div id="myslidemenu" class="jqueryslidemenu">
+                <ul>
+                    <li><a href="#">항공권 예약</a>
+                        <ul>
+                            <li><a href="#">실시간 항공 조회</a></li>
+                            <li><a href="#">항공 간편 조회</a>
+                                <ul>
+                                    <li><a href="#">도시별</a></li>
+                                    <li><a href="#">공항별</a></li>
+                                    <li><a href="#">국가별</a></li>
+                                    <li><a href="#">항공사별</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">도움말</a>
+                        <ul>
+                            <li><a href="#">자주묻는질문</a></li>
+                            <li><a href="#">연락처</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <br style="clear: left" />
             </div>
         </div>
         
         <div id="contentwrapper">
             <div id="contentcolumn">
                 <div class="innertube">
-                    <b>Content Column: <em>Fixed</em></b> <script type="text/javascript">filltext(10)</script>
+                    <b>Content Column: <em>Fixed</em></b>
                 </div>
             </div>
         </div>
             
         <div id="leftcolumn">
             <div class="innertube">
+                
                 <div id="notice_tab">
-                    <h2>공지사항</h2>
+                    <div id="modernbricksmenu">
+                        <ul>
+                        <li class="current"><a href="#" title="공지사항">공지사항</a></li>
+                        <li><a href="#" title="자료실">자료실</a></li>
+                        </ul>
+                    </div>
+                    <div id="modernbricksmenuline">&nbsp;</div>
                     <div id="noticeList">
                         <ul>
                             <li><a href="#">HTML 모든 것을 알려주마 샘플 활용법</a> <span class="date">2009.10.15</span></li>
                             <li><a href="#">W3C 사이트 리뉴얼 소식 및 공지사항</a> <span class="date">2009.10.15</span></li>
                             <li><a href="#">KWCAG2.0 소식</a> <span class="date">2009.10.15</span></li>
                             <li><a href="#">서버 점검으로 인한 사이트 이용안내 입니다.</a> <span class="date">2009.10.15</span></li>
-                            <li><a href="#">여러분들이 생각하는 웹 접근성에 대해 이야기를 나..</a> <span class="date">2009.10.15</span></li>
+                            <li><a href="#">여러분들이 생각하는 웹 접근성에 대해 이야긴..</a> <span class="date">2009.10.15</span></li>
                         </ul>
                     </div>
-                    <h3>자료실</h3>
                     <div id="pdsList">
                         <ul>
                             <li><a href="#">디자인 사이트 링크 모음</a> <span class="date">2009.10.15</span></li>
@@ -111,8 +179,14 @@
                 </div>
                 <div id="translate_tab">
                     <h2>항공권조회</h2>
-                    <h3>국제선</h3>
-                    <table id="internal">
+                    <div id="modernbricksmenu">
+                        <ul>
+                        <li class="current"><a href="#" title="국제선">국제선</a></li>
+                        <li><a href="#" title="국내선">국내선</a></li>
+                        </ul>
+                    </div>
+                    <div id="modernbricksmenuline">&nbsp;</div>
+                    <table id="oversea">
                         <tr>
                             <th>
                                 구 간
@@ -147,7 +221,7 @@
                                 도착지
                             </th>
                             <td>
-                                <input type="text" value="도시명or공항명입력" />
+                                <input type="text" value="도시명or공항명입력" size="15" />
                             </td>
                             <th>
                                 오는날
@@ -200,8 +274,7 @@
                             </td>
                         </tr>        
                     </table>
-                    <h3>국내선</h3>
-                    <table id="oversea">
+                    <table id="internal">
                         <tr>
                             <th>
                                 구 간

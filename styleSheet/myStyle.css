@@ -3,6 +3,9 @@ body{
 margin:0;
 padding:0;
 line-height: 1.5em;
+background-color: #62B1D0;
+font-size:12px;
+font-family: '굴림',Gulim,Helvetica,sans-serif;
 }
 
 b{font-size: 110%;}
@@ -11,11 +14,12 @@ em{color: red;}
 #maincontainer{
 width: 960px; /*Width of main container*/
 margin: 0 auto; /*Center container on page*/
+background-color: #ffffff;
+border:2px solid #000000;
 }
 
 #topsection{
-background: #ffffff;
-height: 130px; /*Height of top section*/
+height: 157px; /*Height of top section*/
 }
 
 #topsection h1{
@@ -36,7 +40,6 @@ margin: 0 100px 0 400px; /*Margins for content column. Should be "0 RightColumnW
 float: left;
 width: 400px; /*Width of left column in pixel*/
 margin-left: -960px; /*Set margin to that of -(MainContainerWidth)*/
-background: #C8FC98;
 }
 
 #rightcolumn{
@@ -49,7 +52,7 @@ background: #FDE95E;
 #footer{
 clear: left;
 width: 100%;
-background: black;
+background-color: #024C68;
 color: #FFF;
 text-align: center;
 padding: 4px 0;
@@ -67,14 +70,132 @@ margin-top: 0;
 
 /* myStyle START*/
 #title{
-    display: inline-block;
-    text-indent: -5000px;
-    background-image: url("../images/title.png");
-    background-repeat: no-repeat;
-    width: 492px;  /*Width of title image file*/
-    height: 117px;  /*Height of title image file*/
+display: inline-block;
+width: 492px;  /*Width of title image file*/
+height: 117px;  /*Height of title image file*/
+margin-bottom:10px;
+margin-right:40px; /*title image margin-right (align-center)*/
+text-indent: -5000px;
+background-image: url("../images/title.png");
+background-repeat: no-repeat;
 }
+
 #notice_tab{
-    text-align:left;
+position:relative;
+z-index: 0;
+text-align: left;
+margin-top: 10px;
 }
+#notice_tab .date{
+float: right;
+}
+#notice_tab li{
+padding: 2px;
+}
+#notice_tab p{
+position: absolute;
+right: 0;
+top: 0;
+}
+
+/* membership menu START */
+#membershipwrap {
+float:left;
+width:960px;
+}
+#membership {
+float:right;
+margin-top:5px;
+font-size: 12px;
+}
+#membership li{
+display: inline;
+}
+ul.arrowunderline{
+list-style-type:none;
+margin:0;
+padding:0;
+text-align:center; /* enter "left", "right", or "center" to orient the menu accordingly */
+}
+ul.arrowunderline li{
+display:inline;
+margin-right:10px; /* spacing between each menu item */
+}
+ul.arrowunderline li a{
+position:relative;
+color: #0776A0;
+padding-bottom:8px; /*spacing between each menu item and arrow underline beneath it */
+text-decoration:none;
+font-size:12px;
+}
+ul.arrowunderline li a:hover{
+border-bottom:3px solid purple; /* style of arrow underline */
+}
+ul.arrowunderline li a:hover:after{ /* use CSS generated content to add arrow to the menu */
+content:'';
+width:0;
+height:0;
+position:absolute;
+left:50%;
+margin-left:-5px; /* value should match border-width below */
+bottom: 0;
+border-width:5px; /* value should match margin-left above */
+border-style:solid;
+border-color: transparent transparent purple transparent; /* create up arrow */
+}
+/* membership menu END */
+
+/* mordenbrick menu START */
+#modernbricksmenu{
+padding: 0;
+width: 100%;
+background: transparent;
+voice-family: "\"}\"";
+voice-family: inherit;
+}
+
+#modernbricksmenu ul{
+margin:0;
+margin-left: 5px; /*margin between first menu item and left browser edge*/
+padding: 0;
+list-style: none;
+}
+
+#modernbricksmenu li{
+display: inline;
+margin: 0 2px 0 0;
+padding: 0;
+text-transform:uppercase;
+}
+
+#modernbricksmenu a{
+float: left;
+display: block;
+color: white;
+margin: 0 1px 0 0; /*Margin between each menu item*/
+padding: 5px 10px;
+text-decoration: none;
+letter-spacing: 1px;
+background-color: #226078; /*Default menu color*/
+border-bottom: 1px solid white;
+}
+
+#modernbricksmenu a:hover{
+background-color: gray; /*Menu hover bgcolor*/
+}
+
+#modernbricksmenu .current a{ /*currently selected tab*/
+background-color: #3AA6D0; /*Blue color theme*/ 
+border-color: #3AA6D0; /*Blue color theme*/ 
+}
+
+#modernbricksmenuline{
+clear: both;
+padding: 0;
+width: 100%;
+height: 5px;
+line-height: 5px;
+background: #3AA6D0; /*Blue color theme*/ 
+}
+/* mordenbrick menu END */
 /* myStyle END*/
