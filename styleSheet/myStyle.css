@@ -1,0 +1,76 @@
+/* layout START */
+body{
+margin:0;
+padding:0;
+line-height: 1.5em;
+}
+
+b{font-size: 110%;}
+em{color: red;}
+
+#maincontainer{
+width: 960px; /*Width of main container*/
+margin: 0 auto; /*Center container on page*/
+}
+
+#topsection{
+background: #EAEAEA;
+height: 90px; /*Height of top section*/
+}
+
+#topsection h1{
+margin: 0;
+padding-top: 15px;
+}
+
+#contentwrapper{
+float: left;
+width: 100%;
+}
+
+#contentcolumn{
+margin: 0 190px 0 180px; /*Margins for content column. Should be "0 RightColumnWidth 0 LeftColumnWidth*/
+}
+
+#leftcolumn{
+float: left;
+width: 180px; /*Width of left column in pixel*/
+margin-left: -960px; /*Set margin to that of -(MainContainerWidth)*/
+background: #C8FC98;
+}
+
+#rightcolumn{
+float: left;
+width: 190px; /*Width of right column*/
+margin-left: -190px; /*Set left margin to -(RightColumnWidth)*/
+background: #FDE95E;
+}
+
+#footer{
+clear: left;
+width: 100%;
+background: black;
+color: #FFF;
+text-align: center;
+padding: 4px 0;
+}
+
+#footer a{
+color: #FFFF80;
+}
+
+.innertube{
+margin: 10px; /*Margins for inner DIV inside each column (to provide padding)*/
+margin-top: 0;
+}
+/* layout END */
+
+/* myStyle START*/
+#title {
+    display: inline-block;
+    text-indent: -10000px;
+    background-image: url("../images/title.png");
+    width: 493px;  /*Width of title image file*/
+    height: 154px;  /*Height of title image file*/
+}
+/* myStyle END*/

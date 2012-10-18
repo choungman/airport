@@ -1,247 +1,56 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>명지 항공 예약 시스템</title>
-        <!-- CSS Reset -->
-        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/reset-fonts-grids/reset-fonts-grids.css">
-        <!-- My CSS-->
-        <link rel="stylesheet" type="text/css" href="./stylesheet/mystyle.css" />
-    </head>
-    <body>
-        <div id="content">
-            <div id="top">
-                <img src="./images/title.png" alt="타이틀" id="title_img" />
-            </div>
-            <div id="membership">
+<head>
+    <meta charset="utf-8" />
+    
+    <title>명지 항공 예약 시스템</title>
+   
+    <!-- CSS Reset -->
+    <link rel="stylesheet" type="text/css" href="./styleSheet/myResetStyle.css">
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/reset-fonts-grids/reset-fonts-grids.css">
+    <!-- My CSS-->
+    <link rel="stylesheet" type="text/css" href="./styleSheet/myStyle.css" />
+    
+    <script type="text/javascript">
+        /*** Temporary text filler function. Remove when deploying template. ***/
+        var gibberish=["This is just some filler text", "Welcome to Dynamic Drive CSS Library", "Demo content nothing to read here"]
+        function filltext(words){
+        for (var i=0; i<words; i++)
+        document.write(gibberish[Math.floor(Math.random()*3)]+" ")
+        }
+    </script>
+</head>
+<body>
+    <div id="maincontainer">
+        <div id="topsection">
+            <h1 id="title">명지항공시스템 타이틀</h1>
+            <div class="innertube">
                 <ul>
                     <li><a href="#">로그인</a></li>
                     <li><a href="#">회원가입</a></li>
                 </ul>
             </div>
-            <div id="center">
-                <div id="left_con">
-                    <div id="notice">
-                        <div id="noticeTitle">
-                            <a href="#noticeList"><img src="./images/select_notice.jpg" alt="공지사항" /></a>
-                            <a href="#pdsList"><img src="./images/non_select_notice.jpg" alt="자료실" /></a>
-                        </div>
-                        <div id="noticeList">
-                            <ul>
-                                <li><a href="#">HTML 모든 것을 알려주마 샘플 활용법</a> <span class="date">2009.10.15</span></li>
-                                <li><a href="#">W3C 사이트 리뉴얼 소식 및 공지사항</a> <span class="date">2009.10.15</span></li>
-                                <li><a href="#">KWCAG2.0 소식</a> <span class="date">2009.10.15</span></li>
-                                <li><a href="#">서버 점검으로 인한 사이트 이용안내 입니다.</a> <span class="date">2009.10.15</span></li>
-                                <li><a href="#">여러분들이 생각하는 웹 접근성에 대해 이야기를 나..</a> <span class="date">2009.10.15</span></li>
-                            </ul>
-                            <p class="more"><a href="#"><img src="./images/more.jpg" alt="더보기" /></a></p>
-                        </div>
-                        <div id="pdsList">
-                            <ul>
-                                <li><a href="#">디자인 사이트 링크 모음</a> <span class="date">2009.10.15</span></li>
-                                <li><a href="#">웹 접근성 관련 자료 모음</a> <span class="date">2009.10.15</span></li>
-                                <li><a href="#">예제 샘플 응용해 보기</a> <span class="date">2009.10.15</span></li>
-                                <li><a href="#">웹 접근성 향상을 위한 국가표준 기술 가이드 라인</a> <span class="date">2009.10.15</span></li>
-                                <li><a href="#">로얄티 프리 이미지 자료</a> <span class="date">2009.10.15</span></li>
-                            </ul>
-                            <p class="more"><a href="#"><img src="./images/more.jpg" alt="더보기" /></a></p>
-                        </div>
-                    </div>
-                    <div id="translate">
-                    <img src="./images/search.jpg" alt="항공권조회" />
-                    <h3>국제선</h3>
-                    <table id="internal">
-                        <tr>
-                            <th>
-                                구 간
-                            </th>
-                            <td colspan="3">
-                                <input type="radio" name="section">왕복
-                                <input type="radio" name="section">편도
-                                <input type="radio" name="section">다구간
-                            </td>
-                        </tr>    
-                        <tr>
-                            <th>
-                                출발지
-                            </th>
-                            <td>
-                                <select>
-                                    <option>인천</option>
-                                    <option>김포</option>
-                                    <option>부산</option>
-                                    <option>제주</option>
-                                </select>
-                            </td>
-                            <th>
-                                가는날
-                            </th>
-                            <td>
-                                <input type="text" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                도착지
-                            </th>
-                            <td>
-                                <input type="text" value="도시명or공항명입력" />
-                            </td>
-                            <th>
-                                오는날
-                            </th>
-                            <td>
-                                <input type="text" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                탑승객
-                            </th>
-                            <td colspan="3">
-                                <select>
-                                    <option>성인0명</option>
-                                    <option selected>성인1명</option>
-                                    <option>성인2명</option>
-                                    <option>성인3명</option>
-                                    <option>성인4명</option>
-                                    <option>성인5명</option>
-                                </select>
-                                <select>
-                                    <option>소아0명</option>
-                                    <option>소아1명</option>
-                                    <option>소아2명</option>
-                                    <option>소아3명</option>
-                                    <option>소아4명</option>
-                                    <option>소아5명</option>
-                                </select>
-                                <select>
-                                    <option>유아0명</option>
-                                    <option>유아1명</option>
-                                    <option>유아2명</option>
-                                    <option>유아3명</option>
-                                    <option>유아4명</option>
-                                    <option>유아5명</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                좌석
-                            </th>
-                            <td colspan="3">
-                                <select>
-                                    <option>일반석</option>
-                                    <option>비즈니스석</option>
-                                    <option>일등석</option>
-                                </select>
-                            </td>
-                        </tr>        
-                    </table>
-                    <h3>국내선</h3>
-                    <table id="oversea">
-                        <tr>
-                            <th>
-                                구 간
-                            </th>
-                            <td colspan="3">
-                                <input type="radio" name="section">왕복
-                                <input type="radio" name="section">편도
-                                <input type="radio" name="section">다구간
-                            </td>
-                        </tr>    
-                        <tr>
-                            <th>
-                                출발지
-                            </th>
-                            <td>
-                                <select>
-                                    <option>인천</option>
-                                    <option>김포</option>
-                                    <option>부산</option>
-                                    <option>제주</option>
-                                </select>
-                            </td>
-                            <th>
-                                가는날
-                            </th>
-                            <td>
-                                <input type="text" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                도착지
-                            </th>
-                            <td>
-                                <select>
-                                    <option>인천</option>
-                                    <option>김포</option>
-                                    <option>부산</option>
-                                    <option>제주</option>
-                                </select>
-                            </td>
-                            <th>
-                                오는날
-                            </th>
-                            <td>
-                                <input type="text" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                탑승객
-                            </th>
-                            <td colspan="3">
-                                <select>
-                                    <option>성인0명</option>
-                                    <option selected>성인1명</option>
-                                    <option>성인2명</option>
-                                    <option>성인3명</option>
-                                    <option>성인4명</option>
-                                    <option>성인5명</option>
-                                </select>
-                                <select>
-                                    <option>소아0명</option>
-                                    <option>소아1명</option>
-                                    <option>소아2명</option>
-                                    <option>소아3명</option>
-                                    <option>소아4명</option>
-                                    <option>소아5명</option>
-                                </select>
-                                <select>
-                                    <option>유아0명</option>
-                                    <option>유아1명</option>
-                                    <option>유아2명</option>
-                                    <option>유아3명</option>
-                                    <option>유아4명</option>
-                                    <option>유아5명</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                좌석
-                            </th>
-                            <td colspan="3">
-                                <select>
-                                    <option>일반석</option>
-                                    <option>비즈니스석</option>
-                                    <option>일등석</option>
-                                </select>
-                            </td>
-                        </tr>        
-                    </table>
-                    <img src="./images/btn_srch.gif" alt="검색버튼" />
-                    </div>
-                </div>
-                <div id="right_con">
-                내용내용
+        </div>
+        
+        <div id="contentwrapper">
+            <div id="contentcolumn">
+                <div class="innertube">
+                    <b>Content Column: <em>Fixed</em></b> <script type="text/javascript">filltext(10)</script>
                 </div>
             </div>
-            <div id="bottom">
+        </div>
+            
+        <div id="leftcolumn">
+            <div class="innertube"><b>Left Column: <em>180px</em></b> <script type="text/javascript">filltext(20)</script></div>
+        </div>
+        
+        <div id="rightcolumn">
+            <div class="innertube"><b>Right Column: <em>190px</em></b> <script type="text/javascript">filltext(15)</script></div>
+        </div>
+        
+        <div id="footer">
             <p>copyright@ 명지대학교 컴퓨터공학과 신동욱 | 안형주</p>
-            </div>
-        <div>
-    </body>
+        </div>
+    </div>
+</body>
 </html>
