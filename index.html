@@ -62,7 +62,10 @@
 				buttonText          : "Calendar",
 				buttonImage        : "/img/calendar.gif"
 			});  
-			$( ".datepicker" ).datepicker();
+			$(".datepicker").datepicker();
+			$("#search_result_table tr").focus(function(){
+				$(this).css('background-color', '#333333');
+			});
         });
     </script>
 </head>
@@ -120,7 +123,7 @@
             <div id="contentcolumn">
                 <div class="innertube">
                     <h3>가는 항공편</h3>
-                    <table class="table_style1">
+                    <table id="search_result_table" class="table_style1">
                         <tr>
                             <th>항공사</th>
                             <th>편명</th>
@@ -129,6 +132,24 @@
                             <th>가격</th>
                             <th>잔여</th>
                             <th>가능</th>
+                        </tr>
+                        <tr>
+                            <td>대한항공</td>
+                            <td>KE1200편</td>
+                            <td>10.24 06:50</td>
+                            <td>일반석</td>
+                            <td>82,000</td>
+                            <td>9</td>
+                            <td>가능</td>
+                        </tr>
+                        <tr>
+                            <td>대한항공</td>
+                            <td>KE1200편</td>
+                            <td>10.24 06:50</td>
+                            <td>일반석</td>
+                            <td>82,000</td>
+                            <td>9</td>
+                            <td>가능</td>
                         </tr>
                         <tr>
                             <td>대한항공</td>
@@ -150,7 +171,7 @@
                         </tr>
                     </table>
                     <h3>오는 항공편</h3>
-                    <table class="table_style1">
+                    <table id="search_result_table" class="table_style1">
                         <tr>
                             <th>항공사</th>
                             <th>편명</th>
@@ -169,9 +190,18 @@
                             <td>9</td>
                             <td>가능</td>
                         </tr>
+                        <tr>
+                            <td>대한항공</td>
+                            <td>KE1200편</td>
+                            <td>10.24 06:50</td>
+                            <td>일반석</td>
+                            <td>82,000</td>
+                            <td>9</td>
+                            <td>가능</td>
+                        </tr>
                     </table>
                     <h3>최종선택/예약</h3>
-                    <table class="table_style1">
+                    <table id="search_result_table" class="table_style1">
                         <tr>
                             <th></th>
                             <th>항공편</th>
@@ -194,11 +224,12 @@
                             <td>10.24 (수) 07:55</td>
                         </tr>
                     </table>
-                    <h4>예상요금</h4>
-                    <div id="fee">127,600원</div>
-                    <p>(유류할증료 및 공항세 불포함)</p>
-                    <input type="button" value="예약하기" />
-                </div>
+					<div id="fee">
+						예상요금 <span>127,600원</span>
+						<p>(유류할증료 및 공항세 불포함)</p>
+						<input type="button" value="예약하기" />
+					</div>
+				</div>
             </div>
         </div>
             
@@ -220,6 +251,7 @@
                             <li><a href="#">서버 점검으로 인한 사이트 이용안내 입니다.</a> <span class="date">2009.10.15</span></li>
                             <li><a href="#">여러분들이 생각하는 웹 접근성에 대해 이야긴..</a> <span class="date">2009.10.15</span></li>
                         </ul>
+						<p class="more"><a href="#" >더보기</a></p>
                     </div>
                     <div id="pdsList">
                         <ul>
@@ -229,8 +261,8 @@
                             <li><a href="#">웹 접근성 향상을 위한 국가표준 기술 가이드 라인</a> <span class="date">2009.10.15</span></li>
                             <li><a href="#">로얄티 프리 이미지 자료</a> <span class="date">2009.10.15</span></li>
                         </ul>
+					    <p class="more"><a href="#" >더보기</a></p>
                     </div>
-                    <p class="more">더보기</p>
                 </div>
                 
                 <div id="translate_tab">
@@ -434,7 +466,19 @@
         </div>
         
         <div id="rightcolumn">
-            <div class="innertube"><b>Right Column: <em>190px</em></b></div>
+			<div id="quick_menu">
+				<div class="innertube">
+					<p>quick menu</p>
+					<ul>
+						<li><a href="#"><img src="./images/quick_menu/user.png" alt="사용자정보수정" /></a></li>
+						<li><a href="#"><img src="./images/quick_menu/email.png" alt="이메일문의" /></a></li>
+						<li><a href="#"><img src="./images/quick_menu/contact.png" alt="전화문의" /></a></li>
+						<li><a href="#"><img src="./images/quick_menu/order.png" alt="예약현황보기" /></a></li>
+						<li><a href="#"><img src="./images/quick_menu/print.png" alt="티켓프린트하기" /></a></li>
+						<li><a href="#"><img src="./images/quick_menu/settings.png" alt="환경설정" /></a></li>
+					</ul>
+				</div>
+			</div>
         </div>
         
         <div id="footer">
