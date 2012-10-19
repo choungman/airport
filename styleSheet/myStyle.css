@@ -98,6 +98,47 @@ right: 0;
 top: 0;
 }
 
+#translate_tab{
+margin-top:20px;
+}
+
+/* form_style START */
+.cssform p{
+width: 300px;
+clear: left;
+margin: 0;
+padding: 5px 0 8px 0;
+padding-left: 155px; /*width of left column containing the label elements*/
+border-top: 1px dashed gray;
+height: 1%;
+}
+
+.cssform label{
+font-weight: bold;
+float: left;
+margin-left: -155px; /*width of left column*/
+width: 150px; /*width of labels. Should be smaller than left column (155px) to create some right margin*/
+}
+
+.cssform input[type="text"]{ /*width of text boxes. IE6 does not understand this attribute*/
+width: 180px;
+}
+
+.cssform textarea{
+width: 250px;
+height: 150px;
+}
+
+/*.threepxfix class below:
+Targets IE6- ONLY. Adds 3 pixel indent for multi-line form contents.
+to account for 3 pixel bug: http://www.positioniseverything.net/explorer/threepxtest.html
+*/
+
+* html .threepxfix{
+margin-left: 3px;
+}
+/* form_style END */
+
 /* membership menu START */
 #membershipwrap {
 float:left;
@@ -198,4 +239,29 @@ line-height: 5px;
 background: #3AA6D0; /*Blue color theme*/ 
 }
 /* mordenbrick menu END */
+
+/* table_style1 START */
+.table_style1{
+margin: 0;
+padding: 0;
+line-height: 21px;
+border-top: 1px solid #cccccc;
+border-left: 1px solid #cccccc;
+border-collapse: collapse;
+}
+.table_style1 th, .table_style1 td{
+margin: 0;
+padding: 3px 0;
+text-align: center;
+border-right: 1px solid #cccccc;
+border-bottom: 1px solid #cccccc;
+}
+.table_style1 caption{
+margin: 0;
+padding: 0;
+}
+.table_style1 th{
+background-color: #e9e9e9;
+}
+/* table_style1 END */
 /* myStyle END*/

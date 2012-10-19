@@ -20,8 +20,8 @@
     </style>
     <![endif]-->
     
-    <script type="text/javascript" src="./javascript/jquery-ui-1.9.0.custom.js"></script>
     <script type="text/javascript" src="./javascript/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="./javascript/jquery-ui-1.9.0.custom.js"></script>
     <script type="text/javascript" src="./javascript/jqueryslidemenu.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
@@ -46,49 +46,27 @@
                 $('#noticeList').hide();
             });
             
-            $('#internal').hide();
-            $('#translate_tab #modernbricksmenu li').eq(0).click(function(){
-                $('#translate_tab #modernbricksmenu li').each(function(index){
-                    $(this).removeClass('current');
-                });
-                $('#translate_tab #modernbricksmenu li').eq(0).addClass('current');
-                $('#internal').show();
-                $('#oversea').hide();
-            });
-            $('#translate_tab #modernbricksmenu li').eq(1).click(function(){
-                $('#translate_tab #modernbricksmenu li').each(function(index){
-                    $(this).removeClass('current');
-                });
-                $('#translate_tab #modernbricksmenu li').eq(1).addClass('current');
-                $('#oversea').show();
-                $('#internal').hide();
-            });
-            
-            
-            $('#tabs').tabs();
+            $('#translate_tab').tabs();
+			
+			$( "#maincontainer" ).hide();
+			var optionss = {};
+			function callback() {
+				setTimeout(function() {
+				$( "#maincontainer:visible" ).removeAttr( "style" ).fadeOut();
+				}, 1000 );
+			};
+			$('#maincontainer').show( 'blind',  optionss, 1500);
+			$.datepicker.setDefaults({
+				dateFormat         : "yy-mm-dd",
+				buttonImageOnly : true,
+				buttonText          : "Calendar",
+				buttonImage        : "/img/calendar.gif"
+			});  
+			$( ".datepicker" ).datepicker();
         });
     </script>
 </head>
 <body>
-                <div id="tabs">
-                    <ul>
-                        <li><a href="#tabs-1">공지사항</a></li>
-                        <li><a href="#tabs-2">자료실</a></li>
-                        <li><a href="#tabs-3">자료실</a></li>
-                    </ul>
-                    <div id="tabs-1">
-                    <p>afad
-                        </p>
-                    </div>
-                    <div id="tabs-2">
-                    <p>afad
-                        </p>
-                    </div>
-                    <div id="tabs-3">
-                    <p>afad
-                        </p>
-                    </div>
-                </div>
     <div id="maincontainer">
         <div id="topsection">
             <div id="membershipwrap">
@@ -148,7 +126,6 @@
             
         <div id="leftcolumn">
             <div class="innertube">
-                
                 <div id="notice_tab">
                     <div id="modernbricksmenu">
                         <ul>
@@ -177,199 +154,204 @@
                     </div>
                     <p class="more">더보기</p>
                 </div>
+
                 <div id="translate_tab">
-                    <h2>항공권조회</h2>
-                    <div id="modernbricksmenu">
-                        <ul>
-                        <li class="current"><a href="#" title="국제선">국제선</a></li>
-                        <li><a href="#" title="국내선">국내선</a></li>
-                        </ul>
-                    </div>
-                    <div id="modernbricksmenuline">&nbsp;</div>
-                    <table id="oversea">
-                        <tr>
-                            <th>
-                                구 간
-                            </th>
-                            <td colspan="3">
-                                <input type="radio" name="section">왕복
-                                <input type="radio" name="section">편도
-                                <input type="radio" name="section">다구간
-                            </td>
-                        </tr>    
-                        <tr>
-                            <th>
-                                출발지
-                            </th>
-                            <td>
-                                <select>
-                                    <option>인천</option>
-                                    <option>김포</option>
-                                    <option>부산</option>
-                                    <option>제주</option>
-                                </select>
-                            </td>
-                            <th>
-                                가는날
-                            </th>
-                            <td>
-                                <input type="text" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                도착지
-                            </th>
-                            <td>
-                                <input type="text" value="도시명or공항명입력" size="15" />
-                            </td>
-                            <th>
-                                오는날
-                            </th>
-                            <td>
-                                <input type="text" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                탑승객
-                            </th>
-                            <td colspan="3">
-                                <select>
-                                    <option>성인0명</option>
-                                    <option selected>성인1명</option>
-                                    <option>성인2명</option>
-                                    <option>성인3명</option>
-                                    <option>성인4명</option>
-                                    <option>성인5명</option>
-                                </select>
-                                <select>
-                                    <option>소아0명</option>
-                                    <option>소아1명</option>
-                                    <option>소아2명</option>
-                                    <option>소아3명</option>
-                                    <option>소아4명</option>
-                                    <option>소아5명</option>
-                                </select>
-                                <select>
-                                    <option>유아0명</option>
-                                    <option>유아1명</option>
-                                    <option>유아2명</option>
-                                    <option>유아3명</option>
-                                    <option>유아4명</option>
-                                    <option>유아5명</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                좌석
-                            </th>
-                            <td colspan="3">
-                                <select>
-                                    <option>일반석</option>
-                                    <option>비즈니스석</option>
-                                    <option>일등석</option>
-                                </select>
-                            </td>
-                        </tr>        
-                    </table>
-                    <table id="internal">
-                        <tr>
-                            <th>
-                                구 간
-                            </th>
-                            <td colspan="3">
-                                <input type="radio" name="section">왕복
-                                <input type="radio" name="section">편도
-                                <input type="radio" name="section">다구간
-                            </td>
-                        </tr>    
-                        <tr>
-                            <th>
-                                출발지
-                            </th>
-                            <td>
-                                <select>
-                                    <option>인천</option>
-                                    <option>김포</option>
-                                    <option>부산</option>
-                                    <option>제주</option>
-                                </select>
-                            </td>
-                            <th>
-                                가는날
-                            </th>
-                            <td>
-                                <input type="text" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                도착지
-                            </th>
-                            <td>
-                                <select>
-                                    <option>인천</option>
-                                    <option>김포</option>
-                                    <option>부산</option>
-                                    <option>제주</option>
-                                </select>
-                            </td>
-                            <th>
-                                오는날
-                            </th>
-                            <td>
-                                <input type="text" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                탑승객
-                            </th>
-                            <td colspan="3">
-                                <select>
-                                    <option>성인0명</option>
-                                    <option selected>성인1명</option>
-                                    <option>성인2명</option>
-                                    <option>성인3명</option>
-                                    <option>성인4명</option>
-                                    <option>성인5명</option>
-                                </select>
-                                <select>
-                                    <option>소아0명</option>
-                                    <option>소아1명</option>
-                                    <option>소아2명</option>
-                                    <option>소아3명</option>
-                                    <option>소아4명</option>
-                                    <option>소아5명</option>
-                                </select>
-                                <select>
-                                    <option>유아0명</option>
-                                    <option>유아1명</option>
-                                    <option>유아2명</option>
-                                    <option>유아3명</option>
-                                    <option>유아4명</option>
-                                    <option>유아5명</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>
-                                좌석
-                            </th>
-                            <td colspan="3">
-                                <select>
-                                    <option>일반석</option>
-                                    <option>비즈니스석</option>
-                                    <option>일등석</option>
-                                </select>
-                            </td>
-                        </tr>        
-                    </table>
-                    <img src="./images/btn_srch.gif" alt="검색버튼" />
-                </div>
-            </div>
+					<ul>
+						<li><a href="#tabs-1" onfocus="this.blur()">국제선</a></li>
+						<li><a href="#tabs-2" onfocus="this.blur()">국내선</a></li>
+					</ul>
+					<div id="tabs-1">
+						<form id="translate_form_oversea" method="post" action="">
+							<table id="oversea" class="table_style1">
+								<tr>
+									<th>
+										구 간
+									</th>
+									<td colspan="3">
+										<input type="radio" name="section">왕복
+										<input type="radio" name="section">편도
+										<input type="radio" name="section">다구간
+									</td>
+								</tr>    
+								<tr>
+									<th>
+										출발지
+									</th>
+									<td>
+										<select>
+											<option>인천</option>
+											<option>김포</option>
+											<option>부산</option>
+											<option>제주</option>
+										</select>
+									</td>
+									<th>
+										가는날
+									</th>
+									<td>
+										<input type="text" class="datepicker" />
+									</td>
+								</tr>
+								<tr>
+									<th>
+										도착지
+									</th>
+									<td>
+										<input type="text" value="도시명or공항명입력" size="15" />
+									</td>
+									<th>
+										오는날
+									</th>
+									<td>
+										<input type="text" class="datepicker" />
+									</td>
+								</tr>
+								<tr>
+									<th>
+										탑승객
+									</th>
+									<td colspan="3">
+										<select>
+											<option>성인0명</option>
+											<option selected>성인1명</option>
+											<option>성인2명</option>
+											<option>성인3명</option>
+											<option>성인4명</option>
+											<option>성인5명</option>
+										</select>
+										<select>
+											<option>소아0명</option>
+											<option>소아1명</option>
+											<option>소아2명</option>
+											<option>소아3명</option>
+											<option>소아4명</option>
+											<option>소아5명</option>
+										</select>
+										<select>
+											<option>유아0명</option>
+											<option>유아1명</option>
+											<option>유아2명</option>
+											<option>유아3명</option>
+											<option>유아4명</option>
+											<option>유아5명</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<th>
+										좌석
+									</th>
+									<td colspan="3">
+										<select>
+											<option>일반석</option>
+											<option>비즈니스석</option>
+											<option>일등석</option>
+										</select>
+									</td>
+								</tr>        
+							</table>
+						</form>
+					</div>
+					<div id="tabs-2">
+						<form id="translate_form_internal" method="post" action="">
+							<table id="internal" class="table_style1">
+								<tr>
+									<th>
+										구 간
+									</th>
+									<td colspan="3">
+										<input type="radio" name="section">왕복
+										<input type="radio" name="section">편도
+										<input type="radio" name="section">다구간
+									</td>
+								</tr>    
+								<tr>
+									<th>
+										출발지
+									</th>
+									<td>
+										<select>
+											<option>인천</option>
+											<option>김포</option>
+											<option>부산</option>
+											<option>제주</option>
+										</select>
+									</td>
+									<th>
+										가는날
+									</th>
+									<td>
+										<input type="text" />
+									</td>
+								</tr>
+								<tr>
+									<th>
+										도착지
+									</th>
+									<td>
+										<select>
+											<option>인천</option>
+											<option>김포</option>
+											<option>부산</option>
+											<option>제주</option>
+										</select>
+									</td>
+									<th>
+										오는날
+									</th>
+									<td>
+										<input type="text" />
+									</td>
+								</tr>
+								<tr>
+									<th>
+										탑승객
+									</th>
+									<td colspan="3">
+										<select>
+											<option>성인0명</option>
+											<option selected>성인1명</option>
+											<option>성인2명</option>
+											<option>성인3명</option>
+											<option>성인4명</option>
+											<option>성인5명</option>
+										</select>
+										<select>
+											<option>소아0명</option>
+											<option>소아1명</option>
+											<option>소아2명</option>
+											<option>소아3명</option>
+											<option>소아4명</option>
+											<option>소아5명</option>
+										</select>
+										<select>
+											<option>유아0명</option>
+											<option>유아1명</option>
+											<option>유아2명</option>
+											<option>유아3명</option>
+											<option>유아4명</option>
+											<option>유아5명</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<th>
+										좌석
+									</th>
+									<td colspan="3">
+										<select>
+											<option>일반석</option>
+											<option>비즈니스석</option>
+											<option>일등석</option>
+										</select>
+									</td>
+								</tr>        
+							</table>
+						</form>
+					</div>
+					<img src="./images/btn_srch.gif" alt="검색버튼" />
+				</div>
+			</div>
         </div>
         
         <div id="rightcolumn">
