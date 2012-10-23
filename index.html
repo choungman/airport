@@ -56,15 +56,29 @@
 				}, 1000 );
 			};
 			$('#maincontainer').show( 'blind',  optionss, 1500);
-			$.datepicker.setDefaults({
-				dateFormat         : "yy-mm-dd",
+			$(".datepicker").datepicker({
+				dateFormat         : 'yy-mm-dd',
+				buttonImage        : './images/icon/calendar.png',
 				buttonImageOnly : true,
-				buttonText          : "Calendar",
-				buttonImage        : "/img/calendar.gif"
-			});  
-			$(".datepicker").datepicker();
-			$("#search_result_table tr").focus(function(){
-				$(this).css('background-color', '#333333');
+				showOn: 'both',
+				showAnim: 'toggle',
+				minDate: '2d'  //최소 이전 날짜(2d - 2일후부터)
+			});
+			$("#search_result_table tr").mouseover(function(){
+				$(this).css('background-color', '#62B1D0');
+				$(this).css('cursor', 'pointer');
+			});
+			$("#search_result_table tr").mouseout(function(){
+				$(this).css('background-color', '#ffffff');
+			});
+
+			$("#airport_search_text").focus(function(){
+				$(this).attr('value', '');
+			});
+			$("#airport_search_text").blur(function(){
+				if($(this).attr('value') == ""){
+					$(this).attr('value', '도시명or공항명');
+				}
 			});
         });
     </script>
@@ -201,7 +215,7 @@
                         </tr>
                     </table>
                     <h3>최종선택/예약</h3>
-                    <table id="search_result_table" class="table_style1">
+                    <table id="select_result_table" class="table_style1">
                         <tr>
                             <th></th>
                             <th>항공편</th>
@@ -300,7 +314,7 @@
 										가는날
 									</th>
 									<td>
-										<input type="text" class="datepicker" />
+										<input type="text" class="datepicker" readonly />
 									</td>
 								</tr>
 								<tr>
@@ -308,13 +322,13 @@
 										도착지
 									</th>
 									<td>
-										<input type="text" value="도시명or공항명입력" size="15" />
+										<input type="text" id="airport_search_text" value="도시명or공항명" size="14" />
 									</td>
 									<th>
 										오는날
 									</th>
 									<td>
-										<input type="text" class="datepicker" />
+										<input type="text" class="datepicker" readonly />
 									</td>
 								</tr>
 								<tr>
@@ -392,7 +406,7 @@
 										가는날
 									</th>
 									<td>
-										<input type="text" />
+										<input type="text" class="datepicker" readonly />
 									</td>
 								</tr>
 								<tr>
@@ -411,7 +425,7 @@
 										오는날
 									</th>
 									<td>
-										<input type="text" />
+										<input type="text" class="datepicker" readonly />
 									</td>
 								</tr>
 								<tr>
@@ -466,19 +480,6 @@
         </div>
         
         <div id="rightcolumn">
-			<div id="quick_menu">
-				<div class="innertube">
-					<p>quick menu</p>
-					<ul>
-						<li><a href="#"><img src="./images/quick_menu/user.png" alt="사용자정보수정" /></a></li>
-						<li><a href="#"><img src="./images/quick_menu/email.png" alt="이메일문의" /></a></li>
-						<li><a href="#"><img src="./images/quick_menu/contact.png" alt="전화문의" /></a></li>
-						<li><a href="#"><img src="./images/quick_menu/order.png" alt="예약현황보기" /></a></li>
-						<li><a href="#"><img src="./images/quick_menu/print.png" alt="티켓프린트하기" /></a></li>
-						<li><a href="#"><img src="./images/quick_menu/settings.png" alt="환경설정" /></a></li>
-					</ul>
-				</div>
-			</div>
         </div>
         
         <div id="footer">
