@@ -1,12 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8" />
 		<title>슬라이드</title>    
 		
-		<script type="text/javascript" src="./javascript/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" src="./javascript/jquery-1.7.2.js"></script>
 		<script type="text/javascript" src="./javascript/jquery-ui-1.9.0.custom.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
