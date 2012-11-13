@@ -1,0 +1,23 @@
+#body {
+	font-size:10px;	
+}
+#notice_tab {
+position:relative;
+z-index: 0;
+text-align: left;
+margin-top: 10px;
+}
+#noticeList {
+	display:none;
+}
+#tabs-2 {
+	display:none;
+}
+
+/* my_table1 */
+.my_table1 {
+	text-align:center;
+}
+.my_table1 th, .my_table1 td{
+	text-align:center;
+}

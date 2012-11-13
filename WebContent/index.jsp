@@ -3,9 +3,9 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Insert title here</title>
+		<title>BetWin</title>
 	</head>
 	<body>
-		copyright@명지대학교 컴퓨터공학과		
+		<% response.sendRedirect("./view/main.jsp"); %>
 	</body>
 </html>

@@ -3,9 +3,13 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>메인 페이지 입니다</title>
+		<title>Insert title here</title>
 	</head>
 	<body>
-		<img src="../img/banner/banner_img1.jpg" />
+<%
+	session.invalidate();
+
+	response.sendRedirect("../view/main.jsp");
+%>
 	</body>
 </html>

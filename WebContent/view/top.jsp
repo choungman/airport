@@ -12,28 +12,28 @@
 		<link href="./css/bootstrap-responsive.css" rel="stylesheet">
 		
 	    <script type="text/javascript" src="./js/jquery-1.7.2.js"></script>
-		<script type="text/javascript" src="./js/bootstrap.js"></script>
 	</head>
 	<body>
-		<img src="./img/title.png" alt="타이틀" />
-		<div class="navbar">
-			<div class="navbar-inner">
-				<ul class="nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Home</a></li>
-					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-							Dropdown
-							<span class="caret"></span>
-						</a>
-						<ul class="dropdown-menu">
-							<li><a href="#">aa</a></li>
-							<li><a href="#">bb</a></li>
-						</ul>
-					</li>
-				</ul>
-			</div>
+		<div id="title_image">
+			<img src="./img/title.png" alt="title_image" />
+		</div>
+		<div id="top_nav">
+			<ul>
+				<li>메뉴1
+					<ul>
+						<li>메뉴1-1</li>
+						<li>메뉴1-2</li>
+					</ul>
+				</li>
+				<li>
+				<li>메뉴2
+					<ul>
+						<li>메뉴2-1</li>
+						<li>메뉴2-2</li>
+					</ul>
+				</li>
+				<li>메뉴3	</li>
+			</ul>
 		</div>
 	</body>
 </html>
