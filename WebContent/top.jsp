@@ -30,11 +30,11 @@
 		<div id="top_nav">
 			<ul class="semiopaquemenu">
 				<li><a href="./moveHome.do" class="selected menu1">Home</a></li>
-				<li><a href="./moveGameList.do" class="menu2">항공권예약</a></li>
-				<li><a href="./moveInfoSoccer.do" class="menu3">공지사항</a></li>
-				<li><a href="#" class="menu4">커뮤니티</a></li>
-				<li><a href="#" class="menu5">Mypage</a></li>
-				<li><a href="#" class="menu6">Q&A문의</a></li>
+				<li><a href="./moveFindAirport.do" class="menu2">항공권예약</a></li>
+				<li><a href="./moveNotice.do" class="menu3">공지사항</a></li>
+				<li><a href="./moveBoard.do" class="menu4">커뮤니티</a></li>
+				<li><a href="./moveInfoModify.do" class="menu5">Mypage</a></li>
+				<li><a href="./moveQnA.do" class="menu6">Q&A문의</a></li>
 			</ul>
 			<div class="bottombar"></div>
 		</div>
