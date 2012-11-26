@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <div id="bottom_nav" class="topbar">
 	<ul class="claybricks">
-		<li><a href="http://www.sportstoto.co.kr/" target="_blank">Sports TOTO</a></li>
-		<li><a href="http://www.betman.co.kr/" target="_blank">BetMan</a></li>
-		<li><a href="http://www.livescore.co.kr/" target="_blank">LiveScore</a></li>
 		<li><a href="http://www.mju.ac.kr/" target="_blank">Myoung Ji University</a></li>
+		<li><a href="http://dblab.mju.ac.kr/design_db" target="_blank">DataBase Design</a></li>
+		<li><a href="http://wingbus.naver.com/main.nhn" target="_blank">NAVER 윙버스</a></li>
+		<li><a href="http://www.hanatour.com/" target="_blank">하나투어</a></li>
 	</ul>
 </div>
 <div id="copyright">
