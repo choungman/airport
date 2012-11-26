@@ -1,0 +1,94 @@
+/* main layout */
+#wrap {
+	width:960px;
+	margin:auto;
+}
+#top {
+	padding-bottom:5px;
+}
+#center {
+	text-align:left;
+}
+#left {
+	width:300px;
+	position:relative;
+	float:left;
+	margin-right:10px;
+}
+#right {
+	float:left;
+	width:650px;
+}
+#bottom {
+	width:960px;
+	margin:auto;
+	clear:both;
+}
+
+/* login_form.jsp layout */
+#login_form {
+	width:300px;
+	height:120px;
+	position:relative;
+}
+#login_form .headerbar{
+	padding:7px 0;
+}
+#login_form table {
+	margin:auto;
+	margin-top:10px;
+}
+#logout_form table {
+	margin:auto
+}
+
+/* main.jsp layout */
+#main_wrap {
+	width:960px;
+}
+#main_wrap .center {
+	position:relative;
+	float:left;
+}
+#main_wrap .new_game {
+	float:left;
+}
+#main_wrap .new_livescore {
+	float:left;
+}
+#main_wrap .hot_news {
+	clear:both;
+}
+#main_wrap .quick_nav li{
+	display:block;
+	width:300px;
+	height:50px;
+}
+
+/* join_member.jsp layout */
+#join_member_wrap {
+	width:960px;
+	margin:auto;	
+}
+#join_member_wrap .provision {
+	padding-top:10px;
+	width:600px;
+	margin:auto;	
+}
+#join_member_wrap .provision textarea {
+	margin-top:10px;
+	width:600px; /* this is equal after css provision */
+	height:150px;
+}
+#join_member_wrap .form {
+	position:relative;
+	padding:20px 0;
+	width:450px;
+	margin:auto;
+}
+
+/* login_fail.jsp layout */
+#login_fail_wrap {
+	width:960px;
+	margin:auto;	
+}

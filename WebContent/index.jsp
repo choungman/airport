@@ -6,6 +6,6 @@
 		<title>BetWin</title>
 	</head>
 	<body>
-		<% response.sendRedirect("./view/main.jsp"); %>
+		<jsp:forward page="./moveHome.do" />
 	</body>
 </html>

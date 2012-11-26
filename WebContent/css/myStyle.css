@@ -1,0 +1,106 @@
+* {
+	font-family: '돋움',Dotum,'굴림',Gulim,AppleGothic,Sans-serif;
+}
+body {
+	text-align:center;
+	font-size:12px;	
+}
+/* title image left move 이미지가 촤즉으로 좀 쏠린느낌이 들어서 padding 을 줘서 약간 땡김 */
+#title_image img{
+	padding-right:30px;
+}
+
+/* login_form style */
+#login_form {
+	vertical-align:middle;
+    display:table-cell;
+    background-color:#f8f8f8;
+    border:1px solid #3AA6D0;
+}
+#login_form .headerbar{
+	background-color:#3AA6D0; 
+	margin-bottom:0;
+	text-transform:uppercase;
+	text-align:center;
+}
+#login_form .headerbar span.title{
+	display:inline-block;
+	text-indent:-9999px;
+	background-image: url('../img/menu_img.png');
+	background-repeat:no-repeat;
+	background-position:0 -50px;
+	width:39px;
+}
+#login_form table th, .login_form table td {
+	padding:2px;
+	text-align:center;
+}
+#logout_form table th, .logout_form table td {
+	text-align:center;
+}
+/* login button style */
+.login_button {
+	cursor:pointer;
+	border:outset 1px #ccc;
+	background:#999;
+	color:#666;
+	font-weight:bold;
+	padding: 15px 5px;
+	margin: 0 5px;
+	background:#ffffff repeat-x left top;
+}
+/* copy_right style */
+#copyright {
+	display:inline-block;
+	text-align:center;
+}
+#copyright table td {
+	padding:10px;
+	color:#313131;
+}
+
+
+/* join_member page style */
+#join_member_wrap .provision {
+	text-align:center;
+}
+#join_member_wrap .provision textarea {
+	overflow-x:hidden;
+	overflow-y:scroll;
+	resize:none;
+}
+/* insert_member_result page style */
+#insert_member_wrap div.title {
+	padding:10px 0;
+	width:640px;
+	height:80px;
+	text-align:center;
+}
+#insert_member_wrap div.title span {
+	display:inline-block;
+	width:400px;
+	height:80px;
+	text-indent:-9999px;
+	background-image:url('../img/insert_member_result.png');
+	background-repeat:no-repeat;
+}
+#insert_member_wrap div.contents {
+	text-align:center;
+}
+
+/* bold class style */
+.bold {
+	font-weight:bold;
+}
+/* red class style */
+.red {
+	color:red;	
+}
+/* blue class style */
+.blue {
+	color:#3aa6d0;	
+}
+/* black class style */
+.black {
+	color:black;	
+}
