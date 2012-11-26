@@ -49,62 +49,47 @@ public class MainController extends HttpServlet {
     		request.setAttribute("main", "1");
     		request.setAttribute("sub", "1");
     	}
-    	else if(command.equals("/moveChargeCash.do")) {
-    		forward.setPath("main.jsp");
-    		request.setAttribute("page", "charge_cash");
-    		request.setAttribute("main", "1");
-    		request.setAttribute("sub", "2");
-    	}
     	else if(command.equals("/moveHelp.do")) {
     		forward.setPath("main.jsp");
     		request.setAttribute("page", "help");
     		request.setAttribute("main", "1");
     		request.setAttribute("sub", "3");
     	}
-    	else if(command.equals("/moveGameList.do")) {
+    	else if(command.equals("/moveFindAirport.do")) {
     		forward.setPath("main.jsp");
-    		request.setAttribute("page", "game_list");
+    		request.setAttribute("page", "findAirport");
     		request.setAttribute("main", "2");
     		request.setAttribute("sub", "1");
     	}
-    	else if(command.equals("/moveFinishedGame.do")) {
+    	
+    	else if(command.equals("/moveNotice.do")) {
     		forward.setPath("main.jsp");
-    		request.setAttribute("page", "finished_game");
-    		request.setAttribute("main", "2");
-    		request.setAttribute("sub", "2");
-    	}
-    	else if(command.equals("/moveGameSchedule.do")) {
-    		forward.setPath("main.jsp");
-    		request.setAttribute("page", "game_schedule");
-    		request.setAttribute("main", "2");
-    		request.setAttribute("sub", "3");
-    	}
-    	else if(command.equals("/moveResult.do")) {
-    		forward.setPath("main.jsp");
-    		request.setAttribute("page", "game_result");
-    		request.setAttribute("main", "2");
-    		request.setAttribute("sub", "4");
-    	}
-    	else if(command.equals("/moveInfoSoccer.do")) {
-    		request.setAttribute("page", "information_soccer");
+    		request.setAttribute("page", "notice");
     		request.setAttribute("main", "3");
     		request.setAttribute("sub", "1");
     	}
-    	else if(command.equals("/moveInfoBaseball.do")) {
-    		request.setAttribute("page", "information_baseball");
-    		request.setAttribute("main", "3");
-    		request.setAttribute("sub", "2");
+    	
+    	else if(command.equals("/moveBoard.do")) {
+    		forward.setPath("main.jsp");
+    		request.setAttribute("page", "board");
+    		request.setAttribute("main", "4");
+    		request.setAttribute("sub", "1");
     	}
-    	else if(command.equals("/moveInfoBasketball.do")) {
-    		request.setAttribute("page", "information_basketball");
-    		request.setAttribute("main", "3");
-    		request.setAttribute("sub", "3");
+    	else if(command.equals("/moveInfoModify.do")) {
+    		forward.setPath("main.jsp");
+    		request.setAttribute("page", "infoModify");
+    		request.setAttribute("main", "5");
+    		request.setAttribute("sub", "1");
     	}
-    	else if(command.equals("/moveInfoVolleyball.do")) {
-    		request.setAttribute("page", "information_volleyball");
-    		request.setAttribute("main", "3");
-    		request.setAttribute("sub", "4");
+    	
+    	else if(command.equals("/moveQnA.do")) {
+    		forward.setPath("main.jsp");
+    		request.setAttribute("page", "qna");
+    		request.setAttribute("main", "6");
+    		request.setAttribute("sub", "1");
     	}
+    	
+    	
     	//액션 수행
     	else if(command.equals("/loginAction.do")) {
     		action = new LoginAction();
