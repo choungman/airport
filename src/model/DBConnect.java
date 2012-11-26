@@ -14,9 +14,9 @@ public class DBConnect {
 		
 		try {
 			initCtx = new InitialContext();
-			envCtx = (Context) initCtx.lookup("java:comp/env");
+			envCtx = (Context) initCtx.lookup("java:/comp/env");
 			
-			datasource = (DataSource)envCtx.lookup("jdbc/WebDB");
+			datasource = (DataSource)envCtx.lookup("jdbc/OraDB");
 		} catch (NamingException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

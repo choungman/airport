@@ -26,10 +26,11 @@ public class MemberDAO {
 		try {
 			ds = dbconn.getDataSource();
 			conn = ds.getConnection();
-			pstmt = conn.prepareStatement("select * from 회원 where ID=? and password=?");
+			pstmt = conn.prepareStatement("select * from 회원 where ID=? and PASSWORD=?");
 			pstmt.setString(1, id);
 			pstmt.setString(2, password);
 			rs = pstmt.executeQuery();
+			
 			if(rs.next()) {
 				member.setID(rs.getString("ID"));
 				member.setName(rs.getString("이름"));
