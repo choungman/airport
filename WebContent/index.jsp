@@ -3,7 +3,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>BetWin</title>
+		<title>명지항공예약시스템</title>
 	</head>
 	<body>
 		<jsp:forward page="./moveHome.do" />

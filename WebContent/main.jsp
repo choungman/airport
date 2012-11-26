@@ -20,7 +20,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>BetWin</title>
+		<title>명지항공예약시스템</title>
 		<!-- CSS Reset -->
     	<link rel="stylesheet" type="text/css" href="./css/myResetStyle.css" />
     	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/reset-fonts-grids/reset-fonts-grids.css" />
