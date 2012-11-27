@@ -53,7 +53,7 @@ public class MainController extends HttpServlet {
     		forward.setPath("main.jsp");
     		request.setAttribute("page", "help");
     		request.setAttribute("main", "1");
-    		request.setAttribute("sub", "3"); 
+    		request.setAttribute("sub", "2"); 
     	}
     	else if(command.equals("/moveFindAirport.do")) {
     		forward.setPath("main.jsp");
