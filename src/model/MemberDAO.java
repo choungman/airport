@@ -55,15 +55,19 @@ public class MemberDAO {
 		try {
 			ds = dbconn.getDataSource();
 			conn = ds.getConnection();
-			pstmt = conn.prepareStatement("insert into 회원(ID, password, 이름, 이메일, 닉네임, 전화번호, 주소) values(?, ? , ? , ? , ? , ? , ?)");
+			pstmt = conn.prepareStatement("insert into 회원(ID, PASSWORD, 이름, 주민번호) values(?, ? , ?, ?)");
 			
 			pstmt.setString(1, memberbean.getID());
 			pstmt.setString(2, memberbean.getPassword());
 			pstmt.setString(3, memberbean.getName());
+<<<<<<< HEAD
 			//pstmt.setString(4, memberbean.getEmail());
 			//pstmt.setString(5, memberbean.getNickName());
 			//pstmt.setString(6, memberbean.getPhone());
 			//pstmt.setString(7, memberbean.getAddress());
+=======
+			pstmt.setString(4, memberbean.getSsn());
+>>>>>>> 33539d3da42d056f3489b74bb74aa457f72d791d
 			
 			pstmt.executeUpdate();
 			

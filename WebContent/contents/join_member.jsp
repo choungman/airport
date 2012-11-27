@@ -691,13 +691,13 @@ betman과 사회복지공동모금회의 기부금 관리 규칙에 따라 기�
 			</p>
 			
 			<p>
-				<label for="emailaddress">닉네임</label>
-				<input type="text" name="nickName" /><input type="button" value="중복확인" class="formbutton" />
+				<label for="comments">패스워드</label>
+				<input type="password" name="password" />
 			</p>
 			
 			<p>
-				<label for="comments">패스워드</label>
-				<input type="password" name="password" />
+				<label for="comments">주민번호</label>
+				<input type="text" name="ssn1" size="7" /> - <input type="text" name="ssn2" size="7" />
 			</p>
 			
 			<p>
@@ -705,20 +705,6 @@ betman과 사회복지공동모금회의 기부금 관리 규칙에 따라 기�
 				<input type="text" name="name" />
 			</p>
 			
-			<p>
-				<label for="comments">이메일</label>
-				<input type="text" name="email"/>
-			</p>
-			
-			<p>
-				<label for="terms">전화번호</label>
-				<input type="text" size="3" name="phone1" /> - <input type="text" size="4" name="phone2" /> - <input type="text" size="4" name="phone3" />
-			</p>
-			
-			<p>
-				<label for="terms">주소</label>
-				<input type="text" name="address" />
-			</p>
 			
 			<div class="submit_button">
 				<input type="button" value="회원가입" class="formbutton" onclick="joinMemberFormCheck()" />

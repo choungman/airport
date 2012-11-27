@@ -38,10 +38,7 @@
 			<form method="post" action="./logoutAction.do">
 				<table>
 					<tr>
-						<th colspan="2"><%= session.getAttribute("nickName") %>님 환영합니다</th>
-					</tr>
-					<tr>
-						<th colspan="2">현재 보유 게임머니 : <%= session.getAttribute("gameMoney") %>원</th>
+						<th colspan="2"><%= session.getAttribute("name") %>님 환영합니다</th>
 					</tr>
 					<tr>									
 						<td colspan="2">
