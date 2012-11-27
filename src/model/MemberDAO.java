@@ -51,19 +51,16 @@ public class MemberDAO {
 		return member;
 	}
 	//회원 추가
-	/*public void InsertMember(MemberBean memberbean) {				
+	public void InsertMember(MemberBean memberbean) {				
 		try {
 			ds = dbconn.getDataSource();
 			conn = ds.getConnection();
-			pstmt = conn.prepareStatement("insert into 회원(ID, password, 이름, 이메일, 닉네임, 전화번호, 주소) values(?, ? , ? , ? , ? , ? , ?)");
+			pstmt = conn.prepareStatement("insert into 회원(ID, PASSWORD, 이름, 주민번호) values(?, ? , ?, ?)");
 			
 			pstmt.setString(1, memberbean.getID());
 			pstmt.setString(2, memberbean.getPassword());
 			pstmt.setString(3, memberbean.getName());
-			pstmt.setString(4, memberbean.getEmail());
-			pstmt.setString(5, memberbean.getNickName());
-			pstmt.setString(6, memberbean.getPhone());
-			pstmt.setString(7, memberbean.getAddress());
+			pstmt.setString(4, memberbean.getSsn());
 			
 			pstmt.executeUpdate();
 			
@@ -75,5 +72,5 @@ public class MemberDAO {
 			if(pstmt != null) try {pstmt.close();} catch(Exception e) {}
 			if(rs != null) try {rs.close();} catch(Exception e) {}
 		}
-	}*/
+	}
 }
