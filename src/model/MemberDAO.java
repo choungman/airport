@@ -8,6 +8,8 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.*;
 
+import beans.MemberBean;
+
 public class MemberDAO {
 	private DBConnect dbconn;
 	DataSource ds;
