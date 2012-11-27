@@ -44,7 +44,7 @@
 						<td colspan="2">
 							<input type="submit" value="로그아웃" class="formbutton" />
 <%
-							if(session.getAttribute("nickName") != null){
+							if(session.getAttribute("name") != null){
 								String name = (String)session.getAttribute("name");
 								if(name.equals("관리자")){
 %>	
