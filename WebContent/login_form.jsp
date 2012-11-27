@@ -45,8 +45,8 @@
 							<input type="submit" value="로그아웃" class="formbutton" />
 <%
 							if(session.getAttribute("nickName") != null){
-								String nickName = (String)session.getAttribute("nickName");
-								if(nickName.equals("관리자")){
+								String name = (String)session.getAttribute("name");
+								if(name.equals("관리자")){
 %>	
 									<input type="button" value="관리자메뉴" class="formbutton" />
 <%
