@@ -36,15 +36,7 @@ public class InsertMemberAction extends HttpServlet implements Action {
 		memberbean.setID(request.getParameter("id"));
 		memberbean.setPassword(request.getParameter("password"));
 		memberbean.setName(request.getParameter("name"));
-<<<<<<< HEAD
-		//memberbean.setEmail(request.getParameter("email"));
-		//memberbean.setNickName(request.getParameter("nickName"));
-		String phone = request.getParameter("phone1")+"-"+request.getParameter("phone2")+"-"+request.getParameter("phone3");
-		//memberbean.setPhone(phone);
-		//memberbean.setAddress(request.getParameter("address"));
-=======
 		memberbean.setName(request.getParameter("ssn1") + request.getParameter("ssn2"));
->>>>>>> 33539d3da42d056f3489b74bb74aa457f72d791d
 		
 		memberdao.InsertMember(memberbean);
 		
