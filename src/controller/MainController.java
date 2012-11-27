@@ -43,6 +43,7 @@ public class MainController extends HttpServlet {
     		forward.setPath("main.jsp");
     		request.setAttribute("page", "join_member");
     	}
+    	//Home
     	else if(command.equals("/moveInsertMemberResult.do")) {
     		forward.setPath("main.jsp");
     		request.setAttribute("page", "insert_member_result");
@@ -55,33 +56,53 @@ public class MainController extends HttpServlet {
     		request.setAttribute("main", "1");
     		request.setAttribute("sub", "2"); 
     	}
+    	//항공기예약
     	else if(command.equals("/moveFindAirport.do")) {
     		forward.setPath("main.jsp");
     		request.setAttribute("page", "findAirport");
     		request.setAttribute("main", "2");
     		request.setAttribute("sub", "1");
     	}
-    	
+    	//공지사항
     	else if(command.equals("/moveNotice.do")) {
     		forward.setPath("main.jsp");
     		request.setAttribute("page", "notice");
     		request.setAttribute("main", "3");
     		request.setAttribute("sub", "1");
     	}
-    	
+    	//커뮤니티
     	else if(command.equals("/moveBoard.do")) {
     		forward.setPath("main.jsp");
     		request.setAttribute("page", "board");
     		request.setAttribute("main", "4");
     		request.setAttribute("sub", "1");
     	}
+    	else if(command.equals("/moveData.do")) {
+    		forward.setPath("main.jsp");
+    		request.setAttribute("page", "data");
+    		request.setAttribute("main", "4");
+    		request.setAttribute("sub", "2");
+    	}
+    	//마이페이지
+    	else if(command.equals("/moveConfirmReserve.do")) {
+    		forward.setPath("main.jsp");
+    		request.setAttribute("page", "confirmReserve");
+    		request.setAttribute("main", "5");
+    		request.setAttribute("sub", "1");
+    	}
     	else if(command.equals("/moveInfoModify.do")) {
     		forward.setPath("main.jsp");
     		request.setAttribute("page", "infoModify");
     		request.setAttribute("main", "5");
-    		request.setAttribute("sub", "1");
+    		request.setAttribute("sub", "2");
     	}
-    	
+    	else if(command.equals("/moveMemberWithdrawal.do")) {
+    		forward.setPath("main.jsp");
+    		request.setAttribute("page", "memberWithdrawal");
+    		request.setAttribute("main", "5");
+    		request.setAttribute("sub", "3");
+    	}
+    	//Q&A
     	else if(command.equals("/moveQnA.do")) {
     		forward.setPath("main.jsp");
     		request.setAttribute("page", "qna");

@@ -32,7 +32,7 @@
 				}
 				else if(mainNum.equals("2")) {		//항공기예약 서브메뉴
 %>					<li><a href="./moveFindAirport.do" class="selected">항공기 검색</a></li>
-
+					
 <%
 				}
 				else if(mainNum.equals("3")) {		//공지사항 서브메뉴
@@ -44,12 +44,15 @@
 				else if(mainNum.equals("4")) {		//커뮤니티 서브메뉴
 %>				
 					<li><a href="./moveBoard.do" class="selected">자유게시판</a></li>
+					<li><a href="./moveData.do" class="selected">자료실</a></li>
 					
 <%
 				}
 				else if(mainNum.equals("5")) {		//MyPage 서브메뉴
 %>				
+					<li><a href="./moveConfirmReserve.do" class="selected">예약사항확인</a></li>
 					<li><a href="./moveInfoModify.do" class="selected">회원정보수정</a></li>
+					<li><a href="./moveMemberWithdrawal.do" class="selected">회원탈퇴</a></li>
 
 <%
 				}
