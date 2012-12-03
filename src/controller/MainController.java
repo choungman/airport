@@ -66,7 +66,7 @@ public class MainController extends HttpServlet {
     	//공지사항
     	else if(command.equals("/moveNotice.do")) {
     		forward.setPath("main.jsp");
-    		request.setAttribute("page", "notice");
+    		request.setAttribute("page", "notice_board");
     		request.setAttribute("main", "3");
     		request.setAttribute("sub", "1");
     	}
@@ -139,6 +139,58 @@ public class MainController extends HttpServlet {
     			e.printStackTrace();
     		}
     	}
+
+    	//게시판 관련 액션 or 페이지이동
+    	else if(command.equals("/moveViewBoard.do")) {
+    		forward.setPath("./view_board.jsp");
+    	}
+		else if(command.equals("/moveWriteBoard.do")) {
+    		forward.setPath("./write_board.jsp");
+    	}
+		else if(command.equals("/moveViewContents.do")) {
+    		forward.setPath("./view_contents.jsp");
+    	}
+		else if(command.equals("/boardDisplayAction.do")) {
+    		action = new BoardDisplayAction();
+    		request.setAttribute("boardName", request.getParameter("boardName"));
+    		request.setAttribute("page", request.getParameter("page"));
+    		try{
+    			forward = action.execute(request, response);
+    		}
+    		catch(Exception e){
+    			e.printStackTrace();
+    		}
+    	}
+		else if(command.equals("/noticeBoardDisplayAction.do")) {
+    		action = new BoardDisplayAction();
+    		request.setAttribute("boardName", "noticeboard");
+    		request.setAttribute("page", "1");
+    		try{
+    			forward = action.execute(request, response);
+    		}
+    		catch(Exception e){
+    			e.printStackTrace();
+    		}
+    	}
+		else if(command.equals("/ContentsDisplayAction.do")) {
+    		action = new ContentsDisplayAction();
+    		try{
+    			forward = action.execute(request, response);
+    		}
+    		catch(Exception e){
+    			e.printStackTrace();
+    		}
+    	}
+		else if(command.equals("/writeBoardAction.do")) {
+    		action = new WriteBoardAction();
+    		try{
+    			forward = action.execute(request, response);
+    		}
+    		catch(Exception e){
+    			e.printStackTrace();
+    		}
+    	}
+    	
     	
 		RequestDispatcher dispatcher = request.getRequestDispatcher(forward.getPath());
 		dispatcher.forward(request, response);
