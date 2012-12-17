@@ -30,7 +30,7 @@
 		<div id="top_nav">
 			<ul class="semiopaquemenu">
 				<li><a href="./moveHome.do" class="selected menu1">Home</a></li>
-				<li><a href="./moveFindAirport.do" class="menu2">항공권예약</a></li>
+				<li><a href="./moveFindAirplain.do" class="menu2">항공권예약</a></li>
 				<li><a href="./moveNotice.do" class="menu3">공지사항</a></li>
 				<li><a href="./moveBoard.do" class="menu4">커뮤니티</a></li>
 				<li><a href="./moveConfirmReserve.do" class="menu5">Mypage</a></li>

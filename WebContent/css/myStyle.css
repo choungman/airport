@@ -249,6 +249,26 @@ body {
 	height:200px;
 }
 
+/* my_table1 style */
+table.my_table1 {
+    width: 650px;
+    border-collapse: collapse;
+    text-align: center;
+}
+.my_table1 td, .my_table1 th {
+    font-size: 12px;
+    border: 1px solid gray;
+    height:30px;
+    text-align: center;
+}
+.my_table1 th {
+    background-color:#3AA6D0;
+    color:#ffffff;
+}
+.my_table1 tr.alt td {
+    color:#000000;
+    background-color:#EAF2D3;
+}
 
 
 /* bold class style */

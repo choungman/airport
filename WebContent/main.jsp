@@ -30,9 +30,13 @@
 	    <link rel="stylesheet" type="text/css" href="./css/myStyle.css" />
 	    <!-- external CSS-->
 	    <link rel="stylesheet" type="text/css" href="./css/externalStyle.css" />
+	    <!-- Jquery-UI CSS-->
+	    <link rel="stylesheet" type="text/css" href="./css/ui-lightness/jquery-ui-1.9.2.custom.css" />
 	    
 	    <!-- Jquery -->
 	    <script src='./js/jquery-1.7.2.js'></script>
+	    <!-- Jquery-UI -->
+	    <script src='./js/jquery-ui-1.9.2.js'></script>
 	</head>
 	<body>
 		<div id="wrap">

@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class MainFrontController
@@ -27,6 +28,7 @@ public class MainController extends HttpServlet {
     	String contextPath = request.getContextPath();
     	String command = requestURI.substring(contextPath.length());
 		Action action = null;
+		HttpSession session = request.getSession();
     	
     	//페이지 이동
     	if(command.equals("/moveHome.do")) {
@@ -43,7 +45,6 @@ public class MainController extends HttpServlet {
     		forward.setPath("main.jsp");
     		request.setAttribute("page", "join_member");
     	}
-    	//Home
     	else if(command.equals("/moveInsertMemberResult.do")) {
     		forward.setPath("main.jsp");
     		request.setAttribute("page", "insert_member_result");
@@ -56,34 +57,62 @@ public class MainController extends HttpServlet {
     		request.setAttribute("main", "1");
     		request.setAttribute("sub", "2"); 
     	}
-    	//항공기예약
-    	else if(command.equals("/moveFindAirport.do")) {
+    	else if(command.equals("/moveFindAirplain.do")) {
+			if(session.getAttribute("id") == null) {
+	    		forward.setPath("main.jsp");
+	    		request.setAttribute("page", "login_please");
+	    		request.setAttribute("main", "1");
+	    		request.setAttribute("sub", "1");
+			}
+			else {
+	    		forward.setPath("main.jsp");
+	    		request.setAttribute("page", "find_airplain");
+	    		request.setAttribute("main", "2");
+	    		request.setAttribute("sub", "1");	
+			}
+    	}
+    	else if(command.equals("/moveAirplainList.do")) {
     		forward.setPath("main.jsp");
-    		request.setAttribute("page", "findAirport");
+    		request.setAttribute("page", "airplain_list");
     		request.setAttribute("main", "2");
     		request.setAttribute("sub", "1");
     	}
-    	//공지사항
+    	else if(command.equals("/moveEachAirplainList.do")) {
+    		forward.setPath("main.jsp");
+    		request.setAttribute("page", "each_airplain_list");
+    		request.setAttribute("main", "2");
+    		request.setAttribute("sub", "1");
+    	}
+    	else if(command.equals("/moveReservation.do")) {
+    		forward.setPath("main.jsp");
+    		request.setAttribute("page", "reservation");
+    		request.setAttribute("main", "2");
+    		request.setAttribute("sub", "1");
+    	}
+    	else if(command.equals("/moveReservationResult.do")) {
+    		forward.setPath("main.jsp");
+    		request.setAttribute("page", "reservation_result");
+    		request.setAttribute("main", "2");
+    		request.setAttribute("sub", "1");
+    	}
     	else if(command.equals("/moveNotice.do")) {
     		forward.setPath("main.jsp");
     		request.setAttribute("page", "notice_board");
     		request.setAttribute("main", "3");
     		request.setAttribute("sub", "1");
     	}
-    	//커뮤니티
     	else if(command.equals("/moveBoard.do")) {
     		forward.setPath("main.jsp");
-    		request.setAttribute("page", "board");
+    		request.setAttribute("page", "notice_board");
     		request.setAttribute("main", "4");
     		request.setAttribute("sub", "1");
     	}
     	else if(command.equals("/moveData.do")) {
     		forward.setPath("main.jsp");
-    		request.setAttribute("page", "data");
+    		request.setAttribute("page", "notice_board");
     		request.setAttribute("main", "4");
     		request.setAttribute("sub", "2");
     	}
-    	//마이페이지
     	else if(command.equals("/moveConfirmReserve.do")) {
     		forward.setPath("main.jsp");
     		request.setAttribute("page", "confirmReserve");
@@ -102,7 +131,6 @@ public class MainController extends HttpServlet {
     		request.setAttribute("main", "5");
     		request.setAttribute("sub", "3");
     	}
-    	//Q&A
     	else if(command.equals("/moveQnA.do")) {
     		forward.setPath("main.jsp");
     		request.setAttribute("page", "qna");
@@ -110,8 +138,47 @@ public class MainController extends HttpServlet {
     		request.setAttribute("sub", "1");
     	}
     	
+    	//비행기 검색,예약 액션
+    	else if(command.equals("/findScheduleAction.do")) {
+    		action = new FindScheduleAction();
+    		try{
+    			forward = action.execute(request, response);
+    		}
+    		catch(Exception e){
+    			e.printStackTrace();
+    		}
+    	}
+    	else if(command.equals("/reservationAction.do")) {
+    		action = new ReservationAction();
+    		try{
+    			forward = action.execute(request, response);
+    		}
+    		catch(Exception e){
+    			e.printStackTrace();
+    		}
+    	}
     	
-    	//액션 수행
+    	//Mypage 나의 예약 사항 보여주기 
+    	else if(command.equals("/displayConfirmReserveAction.do")) {
+			if(session.getAttribute("id") == null) {
+	    		forward.setPath("main.jsp");
+	    		request.setAttribute("page", "login_please");
+	    		request.setAttribute("main", "1");
+	    		request.setAttribute("sub", "1");
+			}
+			else {
+	    		action = new ConfirmReserveAction();
+	    		try{
+	    			forward = action.execute(request, response);
+	    		}
+	    		catch(Exception e){
+	    			e.printStackTrace();
+	    		}
+			}
+    	}
+    	
+    	
+    	//회원가입,로그인 액션
     	else if(command.equals("/loginAction.do")) {
     		action = new LoginAction();
     		try{
