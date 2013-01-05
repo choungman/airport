@@ -40,6 +40,8 @@ public class MainController extends HttpServlet {
     	else if(command.equals("/moveLoginFail.do")) {
     		forward.setPath("main.jsp");
     		request.setAttribute("page", "login_fail");
+    		request.setAttribute("main", "1");
+    		request.setAttribute("sub", "1");
     	}
     	else if(command.equals("/moveJoinMember.do")) {
     		forward.setPath("main.jsp");
@@ -107,6 +109,21 @@ public class MainController extends HttpServlet {
     		request.setAttribute("main", "4");
     		request.setAttribute("sub", "1");
     	}
+		else if(command.equals("/moveDeleteCheck.do")) {
+    		forward.setPath("delete_check.jsp");
+    	}
+		else if(command.equals("/moveModifyCheck.do")) {
+    		forward.setPath("modify_check.jsp");
+    	}
+		else if(command.equals("/moveModifyBoard.do")) {
+    		action = new ModifyCheckAction();
+    		try{
+    			forward = action.execute(request, response);
+    		}
+    		catch(Exception e){
+    			e.printStackTrace();
+    		}
+    	}
     	else if(command.equals("/moveData.do")) {
     		forward.setPath("main.jsp");
     		request.setAttribute("page", "notice_board");
@@ -133,7 +150,7 @@ public class MainController extends HttpServlet {
     	}
     	else if(command.equals("/moveQnA.do")) {
     		forward.setPath("main.jsp");
-    		request.setAttribute("page", "qna");
+    		request.setAttribute("page", "notice_board");
     		request.setAttribute("main", "6");
     		request.setAttribute("sub", "1");
     	}
@@ -175,6 +192,15 @@ public class MainController extends HttpServlet {
 	    			e.printStackTrace();
 	    		}
 			}
+    	}
+    	else if(command.equals("/deleteReservationAction.do")) {
+    		action = new DeleteReservationAction();
+    		try{
+    			forward = action.execute(request, response);
+    		}
+    		catch(Exception e){
+    			e.printStackTrace();
+    		}
     	}
     	
     	
@@ -257,7 +283,25 @@ public class MainController extends HttpServlet {
     			e.printStackTrace();
     		}
     	}
-    	
+		else if(command.equals("/modifyBoardAction.do")) {
+    		action = new ModifyBoardAction();
+    		try{
+    			forward = action.execute(request, response);
+    		}
+    		catch(Exception e){
+    			e.printStackTrace();
+    		}
+			
+		}
+		else if(command.equals("/deleteBoardAction.do")) {
+			action = new DeleteBoardAction();
+    		try{
+    			forward = action.execute(request, response);
+    		}
+    		catch(Exception e){
+    			e.printStackTrace();
+    		}
+		}
     	
 		RequestDispatcher dispatcher = request.getRequestDispatcher(forward.getPath());
 		dispatcher.forward(request, response);

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"  import="beans.*" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" import="beans.*" %>
 <%
 	BoardBean bean = (BoardBean)request.getAttribute("boardContents");
 %>
@@ -16,7 +16,8 @@
 	<body>
 		<div id="board_menu">
 			<input type="button" value="목록보기" onclick="window.location.href='./boardDisplayAction.do?boardName=<%= request.getParameter("boardName") %>&page=1'" />
-			<input type="button" value="삭제" />
+			<input type="button" value="수정" onclick="window.location.href='./moveModifyCheck.do?boardName=<%= request.getParameter("boardName") %>&index=<%= request.getParameter("index") %>'" />
+			<input type="button" value="삭제" onclick="window.location.href='./moveDeleteCheck.do?boardName=<%= request.getParameter("boardName") %>&index=<%= request.getParameter("index") %>'"  />
 		</div>
 		<div id="view_content">
 			<div class="title_bar">

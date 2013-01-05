@@ -18,7 +18,6 @@ public class MemberDAO {
 	private ResultSet rs;
 	
 	public MemberDAO() {
-		dbconn = new DBConnect();
 	}
 	
 	//로그인
@@ -26,6 +25,7 @@ public class MemberDAO {
 		MemberBean member = new MemberBean();
 		
 		try {
+			dbconn = new DBConnect();
 			ds = dbconn.getDataSource();
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement("select * from 회원 where ID=? and PASSWORD=?");
@@ -55,6 +55,7 @@ public class MemberDAO {
 	//회원 추가
 	public void InsertMember(MemberBean memberbean) {				
 		try {
+			dbconn = new DBConnect();
 			ds = dbconn.getDataSource();
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement("insert into 회원(ID, PASSWORD, 이름, 주민번호) values(?, ? , ?, ?)");

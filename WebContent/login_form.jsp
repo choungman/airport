@@ -48,7 +48,7 @@
 								String id = (String)session.getAttribute("id");
 								if(id.equals("admin")){
 %>	
-									<input type="button" value="관리자메뉴" class="formbutton" />
+									<input type="button" value="관리자메뉴" class="formbutton" onclick="window.open('./admin_top.jsp', 'admin_page')"/>
 <%
 								}
 							}

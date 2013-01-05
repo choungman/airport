@@ -22,7 +22,6 @@ public class ScheduleDAO {
 	private ResultSet rs;
 	
 	public ScheduleDAO() {
-		dbconn = new DBConnect();
 	}
 	
 	//비행기 목록
@@ -31,6 +30,7 @@ public class ScheduleDAO {
 		ScheduleBean schedulebean = new ScheduleBean();
 		
 		try {
+			dbconn = new DBConnect();
 			ds = dbconn.getDataSource();
 			conn = ds.getConnection();
 			
@@ -91,6 +91,7 @@ public class ScheduleDAO {
 	//예약
 	public void reservation(int schedule_num1, String name[], String birthday[], int grade1[], int people, String id, int fee, int grade) {
 		try {
+			dbconn = new DBConnect();
 			ReservationBean[] bean = new ReservationBean[people];
 			ds = dbconn.getDataSource();
 			conn = ds.getConnection();
@@ -144,6 +145,10 @@ public class ScheduleDAO {
 						imsi_pstmt.executeUpdate();
 					}
 					bean[i].setCustomerGrade(grade1[i]);
+
+					imsi_pstmt.close();
+					imsi_rs.close();
+					
 				}
 				
 				pstmt = conn.prepareStatement("insert into 예약 values(?, ?, ?, TO_DATE(?, 'YYYY-MM-DD HH:MI:SS'), ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -162,7 +167,7 @@ public class ScheduleDAO {
 				
 				pstmt.executeUpdate();
 			}
-			
+
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -174,9 +179,9 @@ public class ScheduleDAO {
 	}
 	public ArrayList<ReservationBean> getConfirmReserveList(String id) {
 		ArrayList<ReservationBean> list = new ArrayList<ReservationBean>();
-		ReservationBean bean = new ReservationBean();
-
+		
 		try {
+			dbconn = new DBConnect();
 			ds = dbconn.getDataSource();
 			conn = ds.getConnection();
 			
@@ -184,8 +189,10 @@ public class ScheduleDAO {
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
+				ReservationBean bean = new ReservationBean();
 				bean.setCustomerNumber(Integer.parseInt(rs.getString("고객번호")));
 				bean.setId(rs.getString("id"));
+				bean.setCustomerName(rs.getString("고객이름"));
 				bean.setScheduleNumber(Integer.parseInt(rs.getString("스케쥴번호")));
 				bean.setDepartureDate(rs.getString("출발일시"));
 				bean.setGate(Integer.parseInt(rs.getString("게이트번호")));
@@ -208,5 +215,24 @@ public class ScheduleDAO {
 			if(rs != null) try {rs.close();} catch(Exception e) {}
 		}
 		return list;
+	}
+	public void deleteReservation(int customerNumber, String id, int scheduleNumber) {
+		try {
+			dbconn = new DBConnect();
+			ds = dbconn.getDataSource();
+			conn = ds.getConnection();
+			
+			pstmt = conn.prepareStatement("delete from 예약 where 고객번호=" + customerNumber + " and id='" + id + "' and 스케쥴번호=" + scheduleNumber);
+			pstmt.executeUpdate();
+			pstmt = conn.prepareStatement("delete form 고객 where 고객번호=" + customerNumber + " and id='" + id + "'");
+			pstmt.executeUpdate();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} finally {
+			if(conn != null) try {conn.close();} catch(Exception e) {}
+			if(pstmt != null) try {pstmt.close();} catch(Exception e) {}
+			if(rs != null) try {rs.close();} catch(Exception e) {}
+		}
 	}
 }

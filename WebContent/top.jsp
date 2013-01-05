@@ -33,7 +33,7 @@
 				<li><a href="./moveFindAirplain.do" class="menu2">항공권예약</a></li>
 				<li><a href="./moveNotice.do" class="menu3">공지사항</a></li>
 				<li><a href="./moveBoard.do" class="menu4">커뮤니티</a></li>
-				<li><a href="./moveConfirmReserve.do" class="menu5">Mypage</a></li>
+				<li><a href="./displayConfirmReserveAction.do" class="menu5">Mypage</a></li>
 				<li><a href="./moveQnA.do" class="menu6">Q&A문의</a></li>
 			</ul>
 			<div class="bottombar"></div>

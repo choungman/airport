@@ -54,8 +54,7 @@ public class BoardDAO {
 		try {
 			ds = dbconn.getDataSource();
 			conn = ds.getConnection();
-			pstmt = conn.prepareStatement("select * from(select " + boardName + ".*, rownum as rnum from " + boardName + ") where rnum between " + page_list + " and 10 order by num desc");
-			//pstmt = conn.prepareStatement("select * from " + boardName + " where number<="+ page_list +" order by number desc limit 10");
+			pstmt = conn.prepareStatement("select * from (select " + boardName +".*, rownum as NO from " + boardName + ") where NO between " + page_list + " and 10 order by num desc");
 			
 			rs = pstmt.executeQuery();
 			
@@ -136,13 +135,76 @@ public class BoardDAO {
 			ds = dbconn.getDataSource();
 			conn = ds.getConnection();
 			pstmt = conn.prepareStatement("insert into " + boardName + "(num, title, PASSWORD, writer, content, in_date, click_count) values(NOTICEBOARD_SEQ.NEXTVAL, ?, ?, ?, ?, TO_DATE(?, 'yyyy-mm-dd hh24:mi:ss'), 0)");
-			
-			String contents = bean.getContents().replace("\n", "<br/>");
 			pstmt.setString(1, bean.getTitle());
 			pstmt.setString(2, bean.getPassword());
 			pstmt.setString(3, bean.getWriter());
-			pstmt.setString(4, contents);
+			pstmt.setString(4, bean.getContents());
 			pstmt.setString(5, bean.getDate());
+			
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} finally {
+			if(conn != null) try {conn.close();} catch(Exception e) {}
+			if(pstmt != null) try {pstmt.close();} catch(Exception e) {}
+			if(rs != null) try {rs.close();} catch(Exception e) {}
+		}
+	}
+	public boolean checkPassword(String boardName, int index, String password) {
+		boolean check = false;
+
+		try {
+			ds = dbconn.getDataSource();
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement("select password from " + boardName + " where num=" + index);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				if(rs.getString("password").equals(password)){
+					check = true;
+				}
+			}
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} finally {
+			if(conn != null) try {conn.close();} catch(Exception e) {}
+			if(pstmt != null) try {pstmt.close();} catch(Exception e) {}
+			if(rs != null) try {rs.close();} catch(Exception e) {}
+		}
+		
+		return check;
+	}
+	public void modifyBoard(String boardName, int index, BoardBean bean) {
+		try {
+			ds = dbconn.getDataSource();
+			conn = ds.getConnection();
+			
+			pstmt = conn.prepareStatement("update " + boardName + " set title=?, writer=?, content=? where num=" + index);
+
+			pstmt.setString(1, bean.getTitle());
+			pstmt.setString(2, bean.getWriter());
+			pstmt.setString(3, bean.getContents());
+			
+			pstmt.executeUpdate();
+			
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} finally {
+			if(conn != null) try {conn.close();} catch(Exception e) {}
+			if(pstmt != null) try {pstmt.close();} catch(Exception e) {}
+			if(rs != null) try {rs.close();} catch(Exception e) {}
+		}
+	}
+	public void deleteBoard(String boardName, int index) {
+		try {
+			ds = dbconn.getDataSource();
+			conn = ds.getConnection();
+			
+			pstmt = conn.prepareStatement("delete from " + boardName + " where num=" + index);
 			
 			pstmt.executeUpdate();
 			
